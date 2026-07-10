@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMERALD — A Seattle Field Guide</title>
+<meta name="description" content="A meticulously crafted field guide to Seattle and the Salish Sea — neighborhoods, food doctrine, itineraries, day trips, and how to pass for a local.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌲</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div id="rain-layer" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="nav-brand" href="#top">
+    <svg viewBox="0 0 24 32" class="brand-needle" aria-hidden="true">
+      <path d="M12 0 L13 10 L18 22 L14 22 L14 32 L10 32 L10 22 L6 22 L11 10 Z" fill="currentColor"/>
+      <ellipse cx="12" cy="11" rx="7" ry="2.4" fill="currentColor"/>
+    </svg>
+    <span>EMERALD<em>/ a Seattle field guide</em></span>
+  </a>
+  <nav class="nav-links">
+    <a href="#neighborhoods">Neighborhoods</a>
+    <a href="#eat">Eat &amp; Drink</a>
+    <a href="#itineraries">Itineraries</a>
+    <a href="#daytrips">Day Trips</a>
+    <a href="#seasons">Seasons</a>
+    <a href="#fieldnotes">Field Notes</a>
+  </nav>
+  <button class="rain-toggle" id="rainToggle" aria-pressed="false" title="Toggle rain">
+    <span class="rain-icon">☂</span><span class="rain-label">Make it rain</span>
+  </button>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-scene" aria-hidden="true">
+    <svg id="scene" viewBox="0 0 1440 810" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"  stop-color="#0a1220"/>
+          <stop offset="45%" stop-color="#13233a"/>
+          <stop offset="72%" stop-color="#2a4159"/>
+          <stop offset="88%" stop-color="#7a5d63"/>
+          <stop offset="100%" stop-color="#c98a6b"/>
+        </linearGradient>
+        <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1d3049"/>
+          <stop offset="100%" stop-color="#0a1522"/>
+        </linearGradient>
+        <linearGradient id="rainier" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#e9c4ad"/>
+          <stop offset="35%" stop-color="#9c7d85"/>
+          <stop offset="100%" stop-color="#3c4a62"/>
+        </linearGradient>
+        <linearGradient id="cityGlow" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#141f30"/>
+          <stop offset="100%" stop-color="#1c2b40"/>
+        </linearGradient>
+      </defs>
+
+      <rect width="1440" height="810" fill="url(#sky)"/>
+
+      <!-- stars -->
+      <g id="stars" fill="#cfe3f5"></g>
+
+      <!-- Mt Rainier -->
+      <g class="layer" data-depth="0.05">
+        <path d="M980 640 L1150 330 L1180 360 L1205 335 L1230 365 L1255 340 L1420 640 Z" fill="url(#rainier)" opacity="0.9"/>
+        <path d="M1150 330 L1180 360 L1205 335 L1230 365 L1255 340 L1290 405 L1245 392 L1215 412 L1180 395 L1150 415 L1115 393 Z" fill="#f3e6dc" opacity="0.95"/>
+      </g>
+
+      <!-- far ridge -->
+      <g class="layer" data-depth="0.1">
+        <path d="M0 640 L0 560 L120 520 L260 565 L400 510 L540 570 L700 525 L860 575 L1010 540 L1160 585 L1320 550 L1440 585 L1440 640 Z" fill="#182740" opacity="0.85"/>
+      </g>
+
+      <!-- skyline -->
+      <g class="layer" id="skyline" data-depth="0.18">
+        <!-- buildings drawn left→right; y=640 is waterline -->
+        <g fill="url(#cityGlow)" stroke="#0c1626" stroke-width="1">
+          <rect x="60"  y="470" width="58" height="170"/>
+          <rect x="128" y="430" width="46" height="210"/>
+          <rect x="184" y="500" width="70" height="140"/>
+          <polygon points="264,640 264,420 292,395 320,420 320,640"/>
+          <rect x="332" y="452" width="54" height="188"/>
+          <rect x="398" y="392" width="40" height="248"/>
+          <!-- Columbia Center -->
+          <path d="M452 640 L452 360 Q474 330 496 360 L496 640 Z"/>
+          <rect x="508" y="418" width="62" height="222"/>
+          <rect x="582" y="472" width="44" height="168"/>
+          <!-- Smith Tower -->
+          <rect x="636" y="480" width="34" height="160"/>
+          <polygon points="636,480 653,436 670,480"/>
+          <rect x="680" y="510" width="58" height="130"/>
+          <rect x="900" y="520" width="52" height="120"/>
+          <rect x="962" y="488" width="40" height="152"/>
+          <rect x="1012" y="540" width="66" height="100"/>
+        </g>
+        <!-- Space Needle -->
+        <g id="needle">
+          <path d="M806 640 L812 470 L800 470 L790 640 Z" fill="#152238"/>
+          <path d="M826 640 L820 470 L832 470 L842 640 Z" fill="#152238"/>
+          <rect x="812" y="440" width="8" height="60" fill="#152238"/>
+          <ellipse cx="816" cy="438" rx="52" ry="13" fill="#1b2c46" stroke="#0c1626"/>
+          <ellipse cx="816" cy="428" rx="34" ry="9" fill="#22344f"/>
+          <path d="M816 400 L816 419" stroke="#22344f" stroke-width="4"/>
+          <circle id="needle-light" cx="816" cy="397" r="3.5" fill="#ffd9a0"/>
+        </g>
+        <!-- window lights -->
+        <g id="windows" fill="#ffd9a0"></g>
+      </g>
+
+      <!-- water -->
+      <rect x="0" y="640" width="1440" height="170" fill="url(#water)"/>
+      <g id="reflections" opacity="0.35"></g>
+      <g stroke="#3d5a7a" stroke-width="1.5" opacity="0.5">
+        <line x1="90"  y1="668" x2="210" y2="668" class="shimmer s1"/>
+        <line x1="480" y1="700" x2="640" y2="700" class="shimmer s2"/>
+        <line x1="880" y1="676" x2="990" y2="676" class="shimmer s3"/>
+        <line x1="1180" y1="712" x2="1330" y2="712" class="shimmer s1"/>
+        <line x1="260" y1="736" x2="430" y2="736" class="shimmer s2"/>
+        <line x1="700" y1="748" x2="900" y2="748" class="shimmer s3"/>
+      </g>
+
+      <!-- ferry -->
+      <g id="ferry">
+        <path d="M0 0 L110 0 L100 16 L10 16 Z" fill="#e8e4da"/>
+        <rect x="22" y="-14" width="66" height="14" rx="3" fill="#dcd6c8"/>
+        <rect x="40" y="-24" width="30" height="10" rx="2" fill="#2e7d5b"/>
+        <g fill="#ffd9a0">
+          <rect x="28" y="-10" width="5" height="4"/><rect x="40" y="-10" width="5" height="4"/>
+          <rect x="52" y="-10" width="5" height="4"/><rect x="64" y="-10" width="5" height="4"/>
+          <rect x="76" y="-10" width="5" height="4"/>
+        </g>
+      </g>
+
+      <!-- clouds -->
+      <g id="clouds" fill="#22344d" opacity="0.55">
+        <ellipse class="cloud c1" cx="240" cy="150" rx="130" ry="24"/>
+        <ellipse class="cloud c2" cx="760" cy="90"  rx="180" ry="28"/>
+        <ellipse class="cloud c3" cx="1200" cy="190" rx="150" ry="22"/>
+        <ellipse class="cloud c2" cx="440" cy="240" rx="110" ry="18"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero-copy">
+    <p class="kicker reveal">47.6062° N — 122.3321° W · The Salish Sea</p>
+    <h1 class="hero-title">
+      <span class="line"><span>SEA·</span></span>
+      <span class="line"><span>TTLE</span></span>
+    </h1>
+    <p class="hero-sub reveal">The Emerald City, properly. Rain-polished, coffee-wired,
+    ringed by volcanoes and salt water. This is the field guide we'd hand a friend.</p>
+    <div class="hero-cta reveal">
+      <a class="btn btn-solid" href="#neighborhoods">Start exploring</a>
+      <a class="btn btn-ghost" href="#itineraries">I have 48 hours →</a>
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- ============ LIVE CONDITIONS ============ -->
+<div class="conditions" id="conditions" hidden>
+  <span class="cond-live"><i></i>LIVE — FIELD CONDITIONS</span>
+  <span class="cond-item" id="condTemp">—</span>
+  <span class="cond-item" id="condSky">—</span>
+  <span class="cond-item" id="condRain">—</span>
+  <span class="cond-mtn">THE MOUNTAIN IS <b id="condMtn">…</b></span>
+</div>
+
+<!-- ============ TICKER ============ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="tickerTrack">
+    <span>ELEVATION 175 FT</span><i>✦</i>
+    <span>MT RAINIER 14,411 FT · 59 MI SE</span><i>✦</i>
+    <span>ANNUAL RAIN 37 IN — LESS THAN NYC, NOBODY BELIEVES US</span><i>✦</i>
+    <span>COFFEE SHOPS PER CAPITA: YES</span><i>✦</i>
+    <span>FERRY SYSTEM: LARGEST IN THE U.S.</span><i>✦</i>
+    <span>SUMMER SUNSET 9:11 PM</span><i>✦</i>
+    <span>FOUNDED 1851 · DUWAMISH LAND</span><i>✦</i>
+  </div>
+</div>
+
+<!-- ============ INTRO ============ -->
+<section class="intro">
+  <div class="wrap narrow">
+    <p class="intro-text reveal"><span class="dropcap">S</span>eattle doesn't perform for
+    visitors. It hands you a coffee, points at a mountain that may or may not choose to be
+    visible today, and lets you figure the rest out. This guide is the figuring-out, done
+    for you — eight neighborhoods worth your shoe leather, a food doctrine, three
+    itineraries, and the day trips locals actually take. Pack layers. Skip the umbrella.</p>
+  </div>
+</section>
+
+<!-- ============ NEIGHBORHOODS ============ -->
+<section class="section" id="neighborhoods">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">01 — The Territory</p>
+      <h2>Eight neighborhoods,<br><em>zero filler</em></h2>
+      <p class="section-lede">Every card opens a full dossier — map, stops, addresses, directions. <a class="lede-link" href="neighborhoods/index.html">Browse them all →</a></p>
+    </div>
+    <div class="hood-grid">
+
+      <article class="hood reveal" style="--i:0">
+        <div class="hood-num">01</div>
+        <svg class="hood-art" viewBox="0 0 120 80"><rect x="10" y="30" width="100" height="40" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 30 Q60 5 110 30" fill="none" stroke="currentColor" stroke-width="2"/><text x="60" y="55" text-anchor="middle" font-size="13" fill="currentColor" font-family="monospace">MARKET</text><circle cx="26" cy="20" r="3" fill="currentColor"/><circle cx="94" cy="20" r="3" fill="currentColor"/></svg>
+        <a class="cover" href="neighborhoods/pike-place-waterfront/index.html" aria-label="Pike Place &amp; Waterfront dossier"></a><h3>Pike Place &amp; Waterfront</h3>
+        <p>Yes, it's the famous one — and it earns it. Go before 9 AM, watch the fish
+        fly, then take the new Overlook Walk down to the rebuilt waterfront. The gum wall
+        is exactly as gross as promised.</p>
+        <ul class="hood-tags"><li>First morning</li><li>Oysters</li><li>Buskers</li></ul>
+      </article>
+
+      <article class="hood reveal" style="--i:1">
+        <div class="hood-num">02</div>
+        <svg class="hood-art" viewBox="0 0 120 80"><rect x="20" y="20" width="24" height="50" fill="none" stroke="currentColor" stroke-width="2"/><rect x="52" y="10" width="24" height="60" fill="none" stroke="currentColor" stroke-width="2"/><rect x="84" y="28" width="20" height="42" fill="none" stroke="currentColor" stroke-width="2"/><path d="M30 12 l4 -8 4 8" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="64" cy="6" r="3" fill="currentColor"/></svg>
+        <a class="cover" href="neighborhoods/capitol-hill/index.html" aria-label="Capitol Hill dossier"></a><h3>Capitol Hill</h3>
+        <p>The city's loudest heartbeat. Record stores, dive bars, the best restaurant
+        row in the Northwest, and Volunteer Park's conservatory glowing at golden hour.
+        Come for dinner, stay past midnight.</p>
+        <ul class="hood-tags"><li>Nightlife</li><li>Restaurant row</li><li>Vinyl</li></ul>
+      </article>
+
+      <article class="hood reveal" style="--i:2">
+        <div class="hood-num">03</div>
+        <svg class="hood-art" viewBox="0 0 120 80"><path d="M10 60 C30 40 50 40 60 55 C70 40 90 40 110 60" fill="none" stroke="currentColor" stroke-width="2"/><path d="M40 55 l8 -30 4 0 8 30" fill="none" stroke="currentColor" stroke-width="2"/><path d="M45 38 h18" stroke="currentColor" stroke-width="2"/><circle cx="90" cy="30" r="6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <a class="cover" href="neighborhoods/ballard/index.html" aria-label="Ballard dossier"></a><h3>Ballard</h3>
+        <p>Old fishing village turned brewery capital. Watch salmon climb the fish ladder
+        at the locks, graze the Sunday farmers market, then drink your way down Ballard
+        Ave — a dozen breweries in walking distance.</p>
+        <ul class="hood-tags"><li>Breweries</li><li>The Locks</li><li>Sunday market</li></ul>
+      </article>
+
+      <article class="hood reveal" style="--i:3">
+        <div class="hood-num">04</div>
+        <svg class="hood-art" viewBox="0 0 120 80"><path d="M15 70 Q25 20 60 20 Q95 20 105 70" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="60" cy="45" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="60" cy="45" r="2.5" fill="currentColor"/><path d="M35 70 h50" stroke="currentColor" stroke-width="2"/></svg>
+        <a class="cover" href="neighborhoods/fremont/index.html" aria-label="Fremont dossier"></a><h3>Fremont</h3>
+        <p>"Center of the Universe," self-declared. A troll eats a Volkswagen under the
+        bridge, a rocket is bolted to a shop, and Lenin stands awkwardly on a corner.
+        Seattle's weirdness, lovingly preserved.</p>
+        <ul class="hood-tags"><li>The Troll</li><li>Canal walk</li><li>Sunday flea</li></ul>
+      </article>
+
+      <article class="hood reveal" style="--i:4">
+        <div class="hood-num">05</div>
+        <svg class="hood-art" viewBox="0 0 120 80"><path d="M12 0 L13.5 22 L20 44 L16 44 L16 66 L11 66 L11 44 L7 44 L11.5 22 Z" transform="translate(46,6)" fill="none" stroke="currentColor" stroke-width="2"/><ellipse cx="59.5" cy="30" rx="16" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 72 h80" stroke="currentColor" stroke-width="2"/></svg>
+        <a class="cover" href="neighborhoods/queen-anne-seattle-center/index.html" aria-label="Queen Anne dossier"></a><h3>Queen Anne &amp; Seattle Center</h3>
+        <p>The Space Needle, Chihuly's glass garden, and MoPOP's melted-guitar building.
+        Then climb to Kerry Park for <em>the</em> postcard view — skyline, Sound, and
+        Rainier stacked in one frame.</p>
+        <ul class="hood-tags"><li>Kerry Park</li><li>Chihuly</li><li>MoPOP</li></ul>
+      </article>
+
+      <article class="hood reveal" style="--i:5">
+        <div class="hood-num">06</div>
+        <svg class="hood-art" viewBox="0 0 120 80"><rect x="24" y="24" width="72" height="46" fill="none" stroke="currentColor" stroke-width="2"/><path d="M24 24 L60 6 L96 24" fill="none" stroke="currentColor" stroke-width="2"/><path d="M40 70 v-20 h14 v20 M66 46 h16 v12 h-16 z" stroke="currentColor" stroke-width="2" fill="none"/><path d="M52 6 v-4 M60 8 v-6 M68 6 v-4" stroke="currentColor" stroke-width="2"/></svg>
+        <a class="cover" href="neighborhoods/chinatown-international-district/index.html" aria-label="Chinatown–International District dossier"></a><h3>Chinatown–International District</h3>
+        <p>Dim sum carts, the Wing Luke Museum, Uwajimaya's aisles of everything, and
+        late-night hot pot. One of the oldest pan-Asian neighborhoods in North America —
+        come hungry, leave with snacks for the hotel.</p>
+        <ul class="hood-tags"><li>Dim sum</li><li>Uwajimaya</li><li>Wing Luke</li></ul>
+      </article>
+
+      <article class="hood reveal" style="--i:6">
+        <div class="hood-num">07</div>
+        <svg class="hood-art" viewBox="0 0 120 80"><path d="M10 55 Q40 30 60 45 T110 40" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 70 h90" stroke="currentColor" stroke-width="2"/><circle cx="88" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M30 62 l6 -10 6 10 M50 62 l6 -10 6 10" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        <a class="cover" href="neighborhoods/west-seattle-alki/index.html" aria-label="West Seattle &amp; Alki dossier"></a><h3>West Seattle &amp; Alki</h3>
+        <p>Take the water taxi across the bay — five minutes, best skyline view in town.
+        Alki Beach does a convincing California impression on sunny days: volleyball,
+        fish and chips, a miniature Statue of Liberty.</p>
+        <ul class="hood-tags"><li>Water taxi</li><li>Beach</li><li>Skyline view</li></ul>
+      </article>
+
+      <article class="hood reveal" style="--i:7">
+        <div class="hood-num">08</div>
+        <svg class="hood-art" viewBox="0 0 120 80"><rect x="18" y="34" width="30" height="36" fill="none" stroke="currentColor" stroke-width="2"/><rect x="56" y="22" width="22" height="48" fill="none" stroke="currentColor" stroke-width="2"/><path d="M86 70 v-30 l8 -10 8 10 v30" fill="none" stroke="currentColor" stroke-width="2"/><path d="M22 34 l11 -12 11 12" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="67" cy="14" r="4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <a class="cover" href="neighborhoods/georgetown/index.html" aria-label="Georgetown dossier"></a><h3>Georgetown</h3>
+        <p>Industrial, muraled, gloriously unpolished. Art walks in old brewery
+        buildings, hangar-sized antique malls, and some of the city's best pizza and
+        bars — with airplanes from Boeing Field roaring overhead.</p>
+        <ul class="hood-tags"><li>Murals</li><li>Antiques</li><li>Dive bars</li></ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EAT & DRINK ============ -->
+<section class="section section-alt" id="eat">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">02 — Sustenance</p>
+      <h2>The food<br><em>doctrine</em></h2>
+      <p class="section-lede">Non-negotiables, in the order you should eat them.</p>
+    </div>
+    <div class="menu-list">
+      <div class="menu-row reveal"><a class="cover" href="eat/coffee/index.html" aria-label="Coffee guide"></a><div class="menu-cat">COFFEE</div><div class="menu-body"><h3>Drink it like you mean it</h3><p>Skip the first Starbucks line. Locals queue at Espresso Vivace (Capitol Hill), Victrola, or Monorail Espresso — a literal window in a wall downtown. Order a cappuccino; admire the rosetta; do not ask for it extra hot.</p></div><div class="menu-price">$4–6</div></div>
+      <div class="menu-row reveal"><a class="cover" href="eat/seafood/index.html" aria-label="Seafood guide"></a><div class="menu-cat">SEAFOOD</div><div class="menu-body"><h3>Oysters at happy hour, salmon always</h3><p>The Walrus and the Carpenter in Ballard for oysters worth the wait. Taylor Shellfish for the no-wait version. And a salmon chowder at Pike Place, eaten standing up, is a rite of passage.</p></div><div class="menu-price">$$–$$$</div></div>
+      <div class="menu-row reveal"><a class="cover" href="eat/teriyaki/index.html" aria-label="Teriyaki guide"></a><div class="menu-cat">TERIYAKI</div><div class="menu-body"><h3>Seattle's true street food</h3><p>Invented here in 1976. Every strip mall has one, most are great, none are fancy. Chicken teriyaki, extra sauce, from whichever spot is nearest — this is the city's actual signature dish.</p></div><div class="menu-price">$12</div></div>
+      <div class="menu-row reveal"><a class="cover" href="eat/pho-and-dim-sum/index.html" aria-label="Pho and dim sum guide"></a><div class="menu-cat">PHO &amp; DIM SUM</div><div class="menu-body"><h3>Little Saigon &amp; the C-ID</h3><p>Rainy day? Pho in Little Saigon fixes everything. Weekend morning? Dim sum carts at Jade Garden. Follow the fogged-up windows — they never lie.</p></div><div class="menu-price">$–$$</div></div>
+      <div class="menu-row reveal"><a class="cover" href="eat/pastry/index.html" aria-label="Pastry guide"></a><div class="menu-cat">PASTRY</div><div class="menu-body"><h3>The croissant wars</h3><p>Seattle takes lamination seriously. Bakery Nouveau (West Seattle), Sea Wolf (Fremont), Temple Pastries. Arrive early; the good stuff sells out by 10.</p></div><div class="menu-price">$5–8</div></div>
+      <div class="menu-row reveal"><a class="cover" href="eat/cocktails/index.html" aria-label="Cocktail bars guide"></a><div class="menu-cat">NIGHTCAP</div><div class="menu-body"><h3>Cocktails behind unmarked doors</h3><p>Bathtub Gin hides in a Belltown alley. Canon on Capitol Hill has a whiskey list the size of a novella. Order something with local gin and toast the rain.</p></div><div class="menu-price">$15–18</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ITINERARIES ============ -->
+<section class="section section-paper" id="itineraries">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">03 — The Plan</p>
+      <h2>Itineraries,<br><em>hour by hour</em></h2>
+    </div>
+    <div class="tabs reveal" role="tablist" aria-label="Itinerary length">
+      <button class="tab active" role="tab" aria-selected="true" data-tab="t24">24 HOURS</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="t48">48 HOURS</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="t72">72 HOURS</button>
+    </div>
+
+    <div class="tab-panel active" id="t24" role="tabpanel">
+      <div class="timeline">
+        <div class="tl-item reveal"><span class="tl-time">7:30</span><div><h4>Pike Place, before the crowds</h4><p>Coffee at Storyville overlooking the market sign, watch the vendors set up, first salmon toss of the day.</p></div></div>
+        <div class="tl-item reveal"><span class="tl-time">10:00</span><div><h4>Overlook Walk → Waterfront</h4><p>Descend the new stair-park to Elliott Bay. Seattle Aquarium if you have kids; otherwise just breathe the salt air.</p></div></div>
+        <div class="tl-item reveal"><span class="tl-time">12:30</span><div><h4>Lunch in the C-ID</h4><p>Light rail two stops south. Pho, BBQ pork over rice, or hand-pulled noodles. Snack run through Uwajimaya after.</p></div></div>
+        <div class="tl-item reveal"><span class="tl-time">15:00</span><div><h4>Seattle Center</h4><p>Space Needle or — hot take — skip it and do Chihuly Garden &amp; Glass instead. The glasshouse at dusk is unreal.</p></div></div>
+        <div class="tl-item reveal"><span class="tl-time">18:00</span><div><h4>Kerry Park golden hour</h4><p>Ten-minute climb up Queen Anne. The photo you came for: Needle, skyline, Rainier if she's out.</p></div></div>
+        <div class="tl-item reveal"><span class="tl-time">20:00</span><div><h4>Dinner + nightcap, Capitol Hill</h4><p>Walk-ins at the bar are the local move. End at Canon or a dive on Pike/Pine, depending on your constitution.</p></div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="t48" role="tabpanel">
+      <div class="timeline">
+        <div class="tl-item reveal"><span class="tl-time">DAY 2 · 9:00</span><div><h4>Ballard Locks &amp; the fish ladder</h4><p>Boats going up, salmon going upstream, herons supervising. Free and genuinely mesmerizing.</p></div></div>
+        <div class="tl-item reveal"><span class="tl-time">11:30</span><div><h4>Ballard Ave crawl</h4><p>Sunday? Farmers market. Any day: record shops, Nordic Museum, then oysters at Walrus when doors open at 4 — or brewery-hop until then.</p></div></div>
+        <div class="tl-item reveal"><span class="tl-time">14:30</span><div><h4>Fremont weirdness tour</h4><p>Troll → rocket → Lenin → canal path. Gasworks Park for the skyline-over-kites panorama.</p></div></div>
+        <div class="tl-item reveal"><span class="tl-time">17:30</span><div><h4>Water taxi to West Seattle</h4><p>Five minutes across the bay, skyline glowing behind you. Fish and chips on Alki as the sun drops behind the Olympics.</p></div></div>
+        <div class="tl-item reveal"><span class="tl-time">21:00</span><div><h4>Live music</h4><p>Check the Crocodile, Neumos, or Tractor Tavern. This city exported grunge; the venues still deliver.</p></div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="t72" role="tabpanel">
+      <div class="timeline">
+        <div class="tl-item reveal"><span class="tl-time">DAY 3 · 8:00</span><div><h4>Choose your day trip</h4><p>Rainier for alpine drama, Bainbridge for the easy ferry loop, Snoqualmie Falls if you're short on time. Details below in Day Trips.</p></div></div>
+        <div class="tl-item reveal"><span class="tl-time">— OR —</span><div><h4>The unhurried city day</h4><p>Volunteer Park conservatory → Elliott Bay Book Company → SAM (Seattle Art Museum) → Georgetown art walk and pizza.</p></div></div>
+        <div class="tl-item reveal"><span class="tl-time">19:00</span><div><h4>Farewell dinner</h4><p>Book ahead once: The Walrus if you missed it, Sushi Kashiba (Shiro's protégé of Jiro), or Il Nido in a log cabin in West Seattle.</p></div></div>
+        <div class="tl-item reveal"><span class="tl-time">22:00</span><div><h4>Last look</h4><p>Great Wheel lit up over the bay, or the view from your ferry if you planned it right. You'll be back.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAY TRIPS ============ -->
+<section class="section" id="daytrips">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">04 — Beyond the City</p>
+      <h2>Day trips worth<br><em>the drive</em></h2>
+      <p class="section-lede">Drag to scroll →</p>
+    </div>
+  </div>
+  <div class="trips" id="trips">
+    <article class="trip reveal">
+      <svg class="trip-art" viewBox="0 0 300 160"><rect width="300" height="160" fill="#16273d"/><path d="M30 160 L150 30 L175 55 L200 35 L270 160 Z" fill="#4a5a74"/><path d="M150 30 L175 55 L200 35 L226 78 L188 66 L162 82 L128 62 Z" fill="#efe4da"/><circle cx="60" cy="42" r="14" fill="#e9c4ad" opacity="0.9"/><path d="M0 160 L60 120 L110 145 L160 118 L220 148 L300 125 L300 160 Z" fill="#0f1c2e"/></svg>
+      <div class="trip-body">
+        <div class="trip-meta"><span>2.5 HR DRIVE</span><span>FULL DAY</span></div>
+        <a class="cover" href="day-trips/mount-rainier/index.html" aria-label="Mount Rainier day trip"></a><h3>Mount Rainier NP</h3>
+        <p>The mountain that photobombs the skyline, up close. Paradise wildflower meadows July–August, Skyline Trail for the glacier views. Timed entry in summer — book it.</p>
+      </div>
+    </article>
+    <article class="trip reveal">
+      <svg class="trip-art" viewBox="0 0 300 160"><rect width="300" height="160" fill="#16273d"/><path d="M0 100 Q75 80 150 100 T300 100 L300 160 L0 160 Z" fill="#1d3049"/><path d="M60 100 L140 100 L132 84 L68 84 Z" fill="#e8e4da"/><rect x="80" y="70" width="44" height="14" rx="3" fill="#2e7d5b"/><path d="M180 95 l14 -34 4 0 14 34" fill="#24384f"/><circle cx="250" cy="40" r="16" fill="#e9c4ad" opacity="0.8"/><path d="M0 70 L50 45 L100 68 L160 42 L230 66 L300 48 L300 78 L0 88 Z" fill="#12233a"/></svg>
+      <div class="trip-body">
+        <div class="trip-meta"><span>35 MIN FERRY</span><span>HALF DAY</span></div>
+        <a class="cover" href="day-trips/bainbridge-island/index.html" aria-label="Bainbridge Island day trip"></a><h3>Bainbridge Island</h3>
+        <p>Walk on the ferry from downtown — the crossing IS the attraction. Wine tasting, bookstore browsing, and mochi doughnuts in Winslow, then sail home into the skyline.</p>
+      </div>
+    </article>
+    <article class="trip reveal">
+      <svg class="trip-art" viewBox="0 0 300 160"><rect width="300" height="160" fill="#16273d"/><path d="M0 40 L90 40 L120 20 L190 20 L220 40 L300 40 L300 0 L0 0 Z" fill="#12233a"/><path d="M120 40 C118 80 122 110 112 150 M150 40 C152 85 146 115 156 150 M180 40 C178 78 184 112 176 150" stroke="#bcd4e6" stroke-width="10" fill="none" opacity="0.85"/><path d="M0 150 Q150 135 300 150 L300 160 L0 160 Z" fill="#0f1c2e"/><path d="M60 40 l10 -22 6 0 10 22" fill="#24384f"/></svg>
+      <div class="trip-body">
+        <div class="trip-meta"><span>40 MIN DRIVE</span><span>2–3 HOURS</span></div>
+        <a class="cover" href="day-trips/snoqualmie-falls/index.html" aria-label="Snoqualmie Falls day trip"></a><h3>Snoqualmie Falls</h3>
+        <p>A 268-foot curtain of water — taller than Niagara — twenty-five minutes from downtown. Twin Peaks fans: the lodge above the falls is <em>that</em> lodge. Pair with a hike at Rattlesnake Ledge.</p>
+      </div>
+    </article>
+    <article class="trip reveal">
+      <svg class="trip-art" viewBox="0 0 300 160"><rect width="300" height="160" fill="#16273d"/><path d="M0 120 Q40 90 80 115 Q90 100 110 112 L110 160 L0 160 Z" fill="#0f1c2e"/><path d="M300 120 Q260 88 215 116 L215 160 L300 160 Z" fill="#0f1c2e"/><path d="M110 160 L110 90 L125 74 L140 90 L140 160 M150 160 L150 82 L168 62 L186 82 L186 160 M196 160 L196 92 L208 80 L220 92 L220 160" fill="#24384f"/><path d="M118 92 h14 M158 84 h20 M200 96 h12" stroke="#ffd9a0" stroke-width="4"/><circle cx="52" cy="40" r="13" fill="#e9c4ad" opacity="0.8"/></svg>
+      <div class="trip-body">
+        <div class="trip-meta"><span>2 HR DRIVE</span><span>FULL DAY</span></div>
+        <a class="cover" href="day-trips/leavenworth/index.html" aria-label="Leavenworth day trip"></a><h3>Leavenworth</h3>
+        <p>A Bavarian village in the Cascades, committed to the bit since 1962. Bratwurst, beer halls, river floats in summer, a genuinely magical Christmas-lights season in winter.</p>
+      </div>
+    </article>
+    <article class="trip reveal">
+      <svg class="trip-art" viewBox="0 0 300 160"><rect width="300" height="160" fill="#16273d"/><path d="M0 110 Q75 95 150 110 T300 110 L300 160 L0 160 Z" fill="#1d3049"/><path d="M40 110 Q70 84 105 102 Z M170 108 Q205 78 250 100 Z" fill="#12233a"/><path d="M140 96 q10 -14 22 0 q-4 -22 8 -30" stroke="#8fb8a8" stroke-width="5" fill="none"/><circle cx="240" cy="36" r="14" fill="#e9c4ad" opacity="0.85"/><path d="M60 120 q12 8 24 0 M180 126 q12 8 24 0" stroke="#3d5a7a" stroke-width="3" fill="none"/></svg>
+      <div class="trip-body">
+        <div class="trip-meta"><span>3–4 HR + FERRY</span><span>LONG DAY / OVERNIGHT</span></div>
+        <a class="cover" href="day-trips/san-juan-islands/index.html" aria-label="San Juan Islands trip"></a><h3>San Juan Islands</h3>
+        <p>Orcas in the wild, lavender farms, and harbor towns that run on island time. Doable in a long day via Anacortes; better as an overnight on Orcas or San Juan Island.</p>
+      </div>
+    </article>
+    <article class="trip reveal">
+      <svg class="trip-art" viewBox="0 0 300 160"><rect width="300" height="160" fill="#16273d"/><path d="M0 160 L70 60 L100 90 L140 50 L180 95 L230 45 L300 160 Z" fill="#31435e"/><path d="M140 50 L158 72 L128 68 Z M230 45 L250 72 L214 66 Z" fill="#efe4da"/><path d="M20 160 l14 -30 4 0 14 30 M60 160 l16 -36 4 0 16 36 M250 160 l14 -28 4 0 14 28" fill="#0f2438"/><path d="M0 150 Q150 138 300 150 L300 160 L0 160 Z" fill="#0d1a2b"/></svg>
+      <div class="trip-body">
+        <div class="trip-meta"><span>FERRY + 2 HR</span><span>FULL DAY MINIMUM</span></div>
+        <a class="cover" href="day-trips/olympic-peninsula/index.html" aria-label="Olympic Peninsula trip"></a><h3>Olympic Peninsula</h3>
+        <p>Three worlds in one park: Hurricane Ridge's alpine panoramas, the Hoh Rainforest's mossy cathedral, and wild Pacific beaches at Rialto. Greedy? That's an overnight.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ SEASONS ============ -->
+<section class="section section-alt" id="seasons">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">05 — Timing</p>
+      <h2>When to come<br><em>(honest version)</em></h2>
+    </div>
+    <div class="seasons-grid">
+      <div class="season reveal" style="--i:0">
+        <div class="season-dial"><svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="currentColor" stroke-width="2" opacity="0.25"/><path d="M40 6 A34 34 0 0 1 74 40" fill="none" stroke="currentColor" stroke-width="3"/><text x="40" y="46" text-anchor="middle" font-size="16" fill="currentColor" font-family="monospace">52°</text></svg></div>
+        <h3>Spring · Mar–May</h3>
+        <p>Cherry blossoms at UW's quad (late March, go), tulip fields in Skagit Valley an hour north. Showers, yes — but soft ones, and everything is violently green.</p>
+        <span class="season-verdict">VERDICT: UNDERRATED</span>
+      </div>
+      <div class="season reveal" style="--i:1">
+        <div class="season-dial"><svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="currentColor" stroke-width="2" opacity="0.25"/><path d="M40 6 A34 34 0 1 1 8 52" fill="none" stroke="currentColor" stroke-width="3"/><text x="40" y="46" text-anchor="middle" font-size="16" fill="currentColor" font-family="monospace">76°</text></svg></div>
+        <h3>Summer · Jun–Sep</h3>
+        <p>The secret gets out: July–September Seattle is arguably the best summer city in America. Dry, 75°, sunset at 9, mountains out daily. Book everything early.</p>
+        <span class="season-verdict">VERDICT: PEAK — PLAN AHEAD</span>
+      </div>
+      <div class="season reveal" style="--i:2">
+        <div class="season-dial"><svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="currentColor" stroke-width="2" opacity="0.25"/><path d="M40 6 A34 34 0 0 1 68 58" fill="none" stroke="currentColor" stroke-width="3"/><text x="40" y="46" text-anchor="middle" font-size="16" fill="currentColor" font-family="monospace">58°</text></svg></div>
+        <h3>Fall · Oct–Nov</h3>
+        <p>Crisp, moody, cinematic. Salmon runs at the locks, larch hikes in the Cascades, oyster season hitting its stride. The rain returns like an old roommate.</p>
+        <span class="season-verdict">VERDICT: FOR ROMANTICS</span>
+      </div>
+      <div class="season reveal" style="--i:3">
+        <div class="season-dial"><svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="currentColor" stroke-width="2" opacity="0.25"/><path d="M40 6 A34 34 0 0 1 58 12" fill="none" stroke="currentColor" stroke-width="3"/><text x="40" y="46" text-anchor="middle" font-size="16" fill="currentColor" font-family="monospace">44°</text></svg></div>
+        <h3>Winter · Dec–Feb</h3>
+        <p>Gray, yes. But: empty museums, cozy bars, cheap hotels, and world-class skiing 50 minutes away at Snoqualmie — night skiing after your workday, even.</p>
+        <span class="season-verdict">VERDICT: BRING A GOOD COAT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIELD NOTES ============ -->
+<section class="section section-paper" id="fieldnotes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">06 — Local Protocol</p>
+      <h2>How to pass<br><em>for a local</em></h2>
+    </div>
+    <div class="notes-grid">
+      <div class="note reveal" style="--i:0"><span class="note-num">№1</span><h3>No umbrella</h3><p>The single biggest tell. Locals wear a rain shell with a hood and simply proceed. The rain here is a mist, not an event.</p></div>
+      <div class="note reveal" style="--i:1"><span class="note-num">№2</span><h3>"The Mountain is out"</h3><p>This is a real sentence people say, about Rainier, with reverence. When you hear it, look southeast immediately.</p></div>
+      <div class="note reveal" style="--i:2"><span class="note-num">№3</span><h3>Get an ORCA card</h3><p>One card for light rail, buses, water taxi, and ferries. Link runs from the airport to downtown in 38 minutes for about $3 — skip the $60 cab.</p></div>
+      <div class="note reveal" style="--i:3"><span class="note-num">№4</span><h3>Walk on the ferry</h3><p>Car queues are long; walk-ons stroll aboard. Stand on the bow deck. Yes it's cold. Do it anyway.</p></div>
+      <div class="note reveal" style="--i:4"><span class="note-num">№5</span><h3>The Seattle Freeze is real-ish</h3><p>Locals are friendly but reserved. Talk to people at breweries and on ferry decks — those are the sanctioned socializing zones.</p></div>
+      <div class="note reveal" style="--i:5"><span class="note-num">№6</span><h3>Layers, always</h3><p>55° and drizzling at 9 AM, 72° and blazing at 2 PM, back to 58° by dinner. Every local is secretly wearing three garments.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <svg class="footer-skyline" viewBox="0 0 1440 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <path d="M0 120 L0 90 L60 90 L60 60 L100 60 L100 85 L160 85 L160 40 L200 40 L200 120 M240 120 L240 70 L300 70 L300 95 L360 95 L360 55 L420 55 L420 120 M470 120 L470 30 Q495 8 520 30 L520 120 M560 120 L560 65 L620 65 L620 120 M700 120 L706 20 L712 20 L718 120 M713 24 a30 7 0 1 0 -12 0 M780 120 L780 75 L840 75 L840 50 L880 50 L880 120 M940 120 L940 60 L1000 60 L1000 120 M1050 120 L1050 80 L1110 80 L1110 45 L1150 45 L1150 120 M1210 120 L1210 70 L1270 70 L1270 95 L1330 95 L1330 120 M1370 120 L1370 60 L1440 60 L1440 120"
+      fill="none" stroke="currentColor" stroke-width="2" opacity="0.4"/>
+  </svg>
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo">EMERALD</span>
+      <p>A field guide to Seattle &amp; the Salish Sea.<br>Drawn entirely in code. No stock photos were harmed.</p>
+    </div>
+    <div class="footer-cols">
+      <div><h4>Guide</h4><a href="neighborhoods/index.html">Neighborhoods</a><a href="eat/index.html">Eat &amp; Drink</a><a href="#itineraries">Itineraries</a></div>
+      <div><h4>Beyond</h4><a href="day-trips/index.html">Day Trips</a><a href="#seasons">Seasons</a><a href="#fieldnotes">Field Notes</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>MMXXVI · Made with rain</span>
+    <span>47.6062° N — 122.3321° W</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

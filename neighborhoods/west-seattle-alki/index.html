@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>West Seattle & Alki — EMERALD Seattle Field Guide</title>
+<meta name="description" content="West Seattle and Alki Beach field guide: the King County Water Taxi, Alki Beach, Bakery Nouveau, and where Seattle was founded in 1851.">
+<link rel="canonical" href="https://gshakir79-dot.github.io/emerald-seattle/neighborhoods/west-seattle-alki/">
+<meta property="og:title" content="West Seattle & Alki — EMERALD Seattle Field Guide">
+<meta property="og:description" content="West Seattle and Alki Beach field guide: the King County Water Taxi, Alki Beach, Bakery Nouveau, and where Seattle was founded in 1851.">
+<meta property="og:url" content="https://gshakir79-dot.github.io/emerald-seattle/neighborhoods/west-seattle-alki/">
+<meta property="og:site_name" content="EMERALD — A Seattle Field Guide">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌲</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../guide.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"EMERALD","item":"https://gshakir79-dot.github.io/emerald-seattle/"},{"@type":"ListItem","position":2,"name":"Neighborhoods","item":"https://gshakir79-dot.github.io/emerald-seattle/neighborhoods/"},{"@type":"ListItem","position":3,"name":"West Seattle & Alki","item":"https://gshakir79-dot.github.io/emerald-seattle/neighborhoods/west-seattle-alki/"}]}</script>
+</head>
+<body class="subpage">
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="nav-brand" href="../../index.html">
+    <svg viewBox="0 0 24 32" class="brand-needle" aria-hidden="true">
+      <path d="M12 0 L13 10 L18 22 L14 22 L14 32 L10 32 L10 22 L6 22 L11 10 Z" fill="currentColor"/>
+      <ellipse cx="12" cy="11" rx="7" ry="2.4" fill="currentColor"/>
+    </svg>
+    <span>EMERALD<em>/ a seattle field guide</em></span>
+  </a>
+  <nav class="nav-links">
+    <a href="../../neighborhoods/index.html">Neighborhoods</a>
+    <a href="../../eat/index.html">Eat &amp; Drink</a>
+    <a href="../../day-trips/index.html">Day Trips</a>
+    <a href="../../index.html#itineraries">Itineraries</a>
+    <a href="../../index.html#fieldnotes">Field Notes</a>
+  </nav>
+  <a class="rain-toggle nav-back" href="../../index.html">← The Guide</a>
+</header>
+
+
+<main class="page">
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="../../index.html">EMERALD</a><i>/</i><a href="../../neighborhoods/index.html">Neighborhoods</a><i>/</i><span>West Seattle & Alki</span></p>
+      <p class="kicker reveal">Dossier 07 — The Territory</p>
+      <h1 class="page-title reveal">West Seattle & Alki</h1>
+      <p class="lede reveal">A peninsula that behaves like its own seaside town, reached by the best value in Seattle tourism: a water taxi across Elliott Bay with the skyline receding behind you.</p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="essentials reveal">
+      <div class="ess"><span>Get there</span><b>King County Water Taxi from Pier 50</b></div>
+      <div class="ess"><span>Time needed</span><b>Half a day</b></div>
+      <div class="ess"><span>Best at</span><b>Sunny afternoons into sunset</b></div>
+      <div class="ess"><span>Pairs with</span><b><a href="../../neighborhoods/pike-place-waterfront/index.html">Downtown & Pike Place, one boat ride away</a></b></div>
+    </div>
+
+    <div class="prose reveal"><p>The crossing from Pier 50 takes about ten minutes and costs a few dollars on an ORCA card — it is, mile for mile, the best skyline viewing in the city, and locals treat it as a commute. From Seacrest dock, rent a bike or walk the shoreline path 2.5 miles around Duwamish Head to Alki Beach.</p><p>Alki is where the Denny Party landed in November 1851 and optimistically named the place 'New York Alki' — 'New York eventually' in Chinook jargon. Today it's Seattle's only real beach scene: volleyball courts, firepits, a miniature Statue of Liberty, and fish and chips eaten against a railing while the Olympics go pink across the Sound. Up the hill, the Junction is the neighborhood's main street, anchored by one of the best bakeries on the West Coast.</p></div>
+
+    
+  <div class="map-wrap reveal">
+    <div class="map-head"><span class="kicker">The Map</span><span class="map-note">Tap a marker for directions</span></div>
+    <div id="map" class="map-frame"></div>
+    <script type="application/json" id="map-data">{"center":[47.583,-122.399],"zoom":13,"markers":[{"lat":47.6019,"lng":-122.3374,"name":"King County Water Taxi","addr":"Pier 50, 801 Alaskan Way","dir":"https://www.google.com/maps/search/?api=1&query=King%20County%20Water%20Taxi%2C%20Pier%2050%2C%20801%20Alaskan%20Way%2C%20Seattle%20area%2C%20WA"},{"lat":47.587,"lng":-122.3772,"name":"Marination Ma Kai","addr":"1660 Harbor Ave SW","dir":"https://www.google.com/maps/search/?api=1&query=Marination%20Ma%20Kai%2C%201660%20Harbor%20Ave%20SW%2C%20Seattle%20area%2C%20WA"},{"lat":47.5812,"lng":-122.4088,"name":"Alki Beach","addr":"1702 Alki Ave SW","dir":"https://www.google.com/maps/search/?api=1&query=Alki%20Beach%2C%201702%20Alki%20Ave%20SW%2C%20Seattle%20area%2C%20WA"},{"lat":47.5609,"lng":-122.3868,"name":"Bakery Nouveau","addr":"4737 California Ave SW","dir":"https://www.google.com/maps/search/?api=1&query=Bakery%20Nouveau%2C%204737%20California%20Ave%20SW%2C%20Seattle%20area%2C%20WA"}]}</script>
+  </div>
+
+    <div class="stops-head reveal"><p class="kicker">Field-tested stops</p></div>
+    <div class="stops">
+    <article class="stop reveal">
+      <div class="stop-num">01</div>
+      <div class="stop-body">
+        <div class="stop-tag">The crossing</div>
+        <h3>King County Water Taxi</h3>
+        <p>Pier 50 to Seacrest in about ten minutes, skyline the whole way. Check the sailing schedule — off-peak and winter service is thinner.</p>
+        <div class="stop-foot">
+          <span class="stop-addr">Pier 50, 801 Alaskan Way</span>
+          <a class="stop-link" href="https://www.google.com/maps/search/?api=1&query=King%20County%20Water%20Taxi%2C%20Pier%2050%2C%20801%20Alaskan%20Way%2C%20Seattle%20area%2C%20WA" target="_blank" rel="noopener">Directions ↗</a>
+          <a class="stop-link dim" href="https://www.google.com/maps/search/?api=1&query=King%20County%20Water%20Taxi%2C%20Pier%2050%2C%20801%20Alaskan%20Way%2C%20Seattle%20area%2C%20WA" target="_blank" rel="noopener">Hours ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="stop reveal">
+      <div class="stop-num">02</div>
+      <div class="stop-body">
+        <div class="stop-tag">Dockside first stop</div>
+        <h3>Marination Ma Kai</h3>
+        <p>Hawaiian-Korean at the Seacrest dock: kalbi tacos, spam sliders, shave ice, and a patio pointed straight at the skyline you just crossed.</p>
+        <div class="stop-foot">
+          <span class="stop-addr">1660 Harbor Ave SW</span>
+          <a class="stop-link" href="https://www.google.com/maps/search/?api=1&query=Marination%20Ma%20Kai%2C%201660%20Harbor%20Ave%20SW%2C%20Seattle%20area%2C%20WA" target="_blank" rel="noopener">Directions ↗</a>
+          <a class="stop-link dim" href="https://www.google.com/maps/search/?api=1&query=Marination%20Ma%20Kai%2C%201660%20Harbor%20Ave%20SW%2C%20Seattle%20area%2C%20WA" target="_blank" rel="noopener">Hours ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="stop reveal">
+      <div class="stop-num">03</div>
+      <div class="stop-body">
+        <div class="stop-tag">The beach</div>
+        <h3>Alki Beach</h3>
+        <p>2.5 miles of sand, volleyball, firepits, and promenade. The birthplace-of-Seattle monument and the tiny Statue of Liberty are both here.</p>
+        <div class="stop-foot">
+          <span class="stop-addr">1702 Alki Ave SW</span>
+          <a class="stop-link" href="https://www.google.com/maps/search/?api=1&query=Alki%20Beach%2C%201702%20Alki%20Ave%20SW%2C%20Seattle%20area%2C%20WA" target="_blank" rel="noopener">Directions ↗</a>
+          <a class="stop-link dim" href="https://www.google.com/maps/search/?api=1&query=Alki%20Beach%2C%201702%20Alki%20Ave%20SW%2C%20Seattle%20area%2C%20WA" target="_blank" rel="noopener">Hours ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="stop reveal">
+      <div class="stop-num">04</div>
+      <div class="stop-body">
+        <div class="stop-tag">Worth the hill</div>
+        <h3>Bakery Nouveau</h3>
+        <p>William Leaman took a U.S. team to the Coupe du Monde de la Boulangerie and then opened this. The twice-baked almond croissant has a citywide following.</p>
+        <div class="stop-foot">
+          <span class="stop-addr">4737 California Ave SW</span>
+          <a class="stop-link" href="https://www.google.com/maps/search/?api=1&query=Bakery%20Nouveau%2C%204737%20California%20Ave%20SW%2C%20Seattle%20area%2C%20WA" target="_blank" rel="noopener">Directions ↗</a>
+          <a class="stop-link dim" href="https://www.google.com/maps/search/?api=1&query=Bakery%20Nouveau%2C%204737%20California%20Ave%20SW%2C%20Seattle%20area%2C%20WA" target="_blank" rel="noopener">Hours ↗</a>
+        </div>
+      </div>
+    </article></div>
+
+    <aside class="tip-block reveal">
+      <span class="tip-label">Local tip</span>
+      <p>Ride over on the water taxi in daylight and time the return crossing for just after sunset — the skyline lights coming on over black water is the money shot of the whole trip.</p>
+    </aside>
+  </section>
+
+  
+  <nav class="pagenav wrap reveal" aria-label="More neighborhoods">
+    <a class="pn prev" href="../../neighborhoods/chinatown-international-district/index.html"><span>← Previous</span><b>The C-ID</b></a>
+    <a class="pn all" href="../../neighborhoods/index.html"><span>All neighborhoods</span></a>
+    <a class="pn next" href="../../neighborhoods/georgetown/index.html"><span>Next →</span><b>Georgetown</b></a>
+  </nav>
+</main>
+
+<footer class="footer">
+  <svg class="footer-skyline" viewBox="0 0 1440 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <path d="M0 120 L0 90 L60 90 L60 60 L100 60 L100 85 L160 85 L160 40 L200 40 L200 120 M240 120 L240 70 L300 70 L300 95 L360 95 L360 55 L420 55 L420 120 M470 120 L470 30 Q495 8 520 30 L520 120 M560 120 L560 65 L620 65 L620 120 M700 120 L706 20 L712 20 L718 120 M713 24 a30 7 0 1 0 -12 0 M780 120 L780 75 L840 75 L840 50 L880 50 L880 120 M940 120 L940 60 L1000 60 L1000 120 M1050 120 L1050 80 L1110 80 L1110 45 L1150 45 L1150 120 M1210 120 L1210 70 L1270 70 L1270 95 L1330 95 L1330 120 M1370 120 L1370 60 L1440 60 L1440 120"
+      fill="none" stroke="currentColor" stroke-width="2" opacity="0.4"/>
+  </svg>
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo">EMERALD</span>
+      <p>A field guide to Seattle &amp; the Salish Sea.<br>Drawn entirely in code. No stock photos were harmed.</p>
+    </div>
+    <div class="footer-cols">
+      <div><h4>Guide</h4><a href="../../neighborhoods/index.html">Neighborhoods</a><a href="../../eat/index.html">Eat &amp; Drink</a><a href="../../index.html#itineraries">Itineraries</a></div>
+      <div><h4>Beyond</h4><a href="../../day-trips/index.html">Day Trips</a><a href="../../index.html#seasons">Seasons</a><a href="../../index.html#fieldnotes">Field Notes</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>MMXXVI · Made with rain</span>
+    <span>47.6062° N — 122.3321° W</span>
+  </div>
+</footer>
+
+<script src="../../page.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>window.addEventListener('load',()=>window.__initMap&&window.__initMap());</script>
+</body>
+</html>

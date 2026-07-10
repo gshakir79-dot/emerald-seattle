@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gshakir79-dot.github.io/emerald-seattle/sitemap.xml

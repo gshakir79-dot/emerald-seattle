@@ -9,6 +9,8 @@ const { neighborhoods, eatCategories, dayTrips, tripArt } = require("./data.js")
 
 // Live at GitHub Pages for now; change to the custom domain when purchased, then `node build.js` and push.
 const ORIGIN = "https://gshakir79-dot.github.io/emerald-seattle";
+const VERIFIED = "July 2026"; // bump when content is re-checked
+const REPO_ISSUES = "https://github.com/gshakir79-dot/emerald-seattle/issues";
 const ROOT = __dirname;
 
 const gmaps = (q) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q + ", Seattle area, WA")}`;
@@ -37,6 +39,10 @@ function shell({ title, desc, urlPath, body, hasMap, crumbs }) {
 <meta property="og:url" content="${ORIGIN}${urlPath}">
 <meta property="og:site_name" content="EMERALD — A Seattle Field Guide">
 <meta property="og:type" content="article">
+<meta property="og:image" content="${ORIGIN}/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌲</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,7 +69,7 @@ ${hasMap ? `<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/le
     <a href="/eat/">Eat &amp; Drink</a>
     <a href="/day-trips/">Day Trips</a>
     <a href="/#itineraries">Itineraries</a>
-    <a href="/#fieldnotes">Field Notes</a>
+    <a href="/about/">About</a>
   </nav>
   <a class="rain-toggle nav-back" href="/">← The Guide</a>
 </header>
@@ -82,11 +88,12 @@ ${body}
     </div>
     <div class="footer-cols">
       <div><h4>Guide</h4><a href="/neighborhoods/">Neighborhoods</a><a href="/eat/">Eat &amp; Drink</a><a href="/#itineraries">Itineraries</a></div>
-      <div><h4>Beyond</h4><a href="/day-trips/">Day Trips</a><a href="/#seasons">Seasons</a><a href="/#fieldnotes">Field Notes</a></div>
+      <div><h4>Beyond</h4><a href="/day-trips/">Day Trips</a><a href="/#seasons">Seasons</a><a href="/about/">About</a></div>
     </div>
   </div>
   <div class="footer-bottom">
     <span>MMXXVI · Made with rain</span>
+    <span>Field-checked ${VERIFIED}</span>
     <span>47.6062° N — 122.3321° W</span>
   </div>
 </footer>
@@ -163,6 +170,7 @@ function neighborhoodPage(h, i) {
       <p class="kicker reveal">Dossier ${h.num} — The Territory</p>
       <h1 class="page-title reveal">${h.name}</h1>
       <p class="lede reveal">${h.lede}</p>
+      <p class="stamp reveal">✓ Field-checked ${VERIFIED}</p>
     </div>
   </section>
 
@@ -243,6 +251,7 @@ function eatPage(c, i) {
       <p class="kicker reveal">The Food Doctrine — ${c.cat}</p>
       <h1 class="page-title reveal">${c.name}</h1>
       <p class="lede reveal">${c.lede}</p>
+      <p class="stamp reveal">✓ Field-checked ${VERIFIED}</p>
     </div>
   </section>
 
@@ -311,6 +320,7 @@ function tripPage(t, i) {
       <p class="kicker reveal">Beyond the City — ${t.meta.join(" · ")}</p>
       <h1 class="page-title reveal">${t.name}</h1>
       <p class="lede reveal">${t.lede}</p>
+      <p class="stamp reveal">✓ Field-checked ${VERIFIED}</p>
     </div>
     <div class="trip-banner reveal">${tripArt[t.slug]}</div>
   </section>
@@ -384,6 +394,56 @@ function tripsIndex() {
   });
 }
 
+/* ---------- about page ---------- */
+
+function aboutPage() {
+  const crumbs = [
+    { name: "EMERALD", href: "/" },
+    { name: "About", href: "/about/" },
+  ];
+  const body = `
+<main class="page">
+  <section class="page-hero">
+    <div class="wrap">
+      ${crumbsHtml(crumbs)}
+      <p class="kicker reveal">The Desk — Who's Behind This</p>
+      <h1 class="page-title reveal">About <em>EMERALD</em></h1>
+      <p class="lede reveal">An independent, one-desk field guide to Seattle and the Salish Sea — written like advice to a friend, not like ad inventory.</p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="essentials reveal">
+      <div class="ess"><span>No pay-for-placement</span><b>No business has ever paid, traded, or asked to appear in this guide. Nothing here is sponsored.</b></div>
+      <div class="ess"><span>Zero filler</span><b>Short lists, strong opinions. Eight neighborhoods, not thirty. If it's listed, it earned it.</b></div>
+      <div class="ess"><span>Field-checked</span><b>Every dossier carries the date its details were last verified. Stale entries get fixed or cut.</b></div>
+      <div class="ess"><span>Drawn in code</span><b>Every visual is hand-written SVG — the skyline, the maps' pins, the trip art. No stock photos.</b></div>
+    </div>
+
+    <div class="prose reveal">
+      <p>EMERALD exists because most city guides are built to rank, not to help: fifty-item listicles, stock photos of the Space Needle, and advice recycled until nobody remembers whether it was ever true. This is the opposite bet — a small, opinionated guide that would rather be right about eight neighborhoods than vague about eighty.</p>
+      <p>How places get in: they have to be somewhere we'd actually send a visiting friend with limited time — and keep sending them after the hype cycle moves on. Institutions earn their place by still being good; new spots earn it by being worth a detour. Chains, tourist traps that don't deliver, and anywhere that coasts on its view alone don't make the cut. The one exception is flagged honestly (the gum wall is objectively gross; go anyway).</p>
+      <p>Hours, prices, and openings change faster than any guide can promise. That's why every place links straight to live directions and current hours, and why each page wears its verification date instead of pretending to be timeless.</p>
+    </div>
+
+    <aside class="tip-block reveal">
+      <span class="tip-label">Corrections</span>
+      <p>Spotted a closed door, a moved market stall, a changed menu? <a class="lede-link" href="${REPO_ISSUES}" target="_blank" rel="noopener">Open an issue on GitHub</a> — corrections ship within days, not editions.</p>
+    </aside>
+
+    <div class="prose reveal">
+      <p><strong>Disclosure.</strong> EMERALD currently has no sponsorships, affiliate relationships, or advertising. If that ever changes, affected links will be labeled plainly.</p>
+      <p><strong>Colophon.</strong> Type is set in Fraunces, Outfit, and JetBrains Mono. Maps by <a class="lede-link" href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a> with © OpenStreetMap contributors and © CARTO tiles. Live weather by <a class="lede-link" href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>. Built by hand — one HTML page at a time, generated from a single data file — on the traditional land of the Duwamish people.</p>
+    </div>
+  </section>
+</main>`;
+  return shell({
+    title: "About", urlPath: "/about/",
+    desc: "Who makes EMERALD and how: no pay-for-placement, zero filler, field-checked dates on every dossier, and every visual drawn in code.",
+    body, hasMap: false, crumbs,
+  });
+}
+
 /* ---------- write everything ---------- */
 
 /* Convert root-relative hrefs to depth-aware relative ones so pages work
@@ -408,6 +468,7 @@ function emit(rel, html) {
   console.log("  built /" + rel.replace(/\\/g, "/") + "/");
 }
 
+emit("about", aboutPage());
 emit("neighborhoods", neighborhoodsIndex());
 neighborhoods.forEach((h, i) => emit(`neighborhoods/${h.slug}`, neighborhoodPage(h, i)));
 emit("eat", eatIndex());

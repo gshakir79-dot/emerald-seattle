@@ -29,6 +29,14 @@
   color: var(--fog); max-width: 720px;
 }
 
+.stamp {
+  margin-top: 1.6rem;
+  font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--emerald);
+  display: inline-block; border: 1px solid rgba(61, 220, 151, 0.35);
+  border-radius: 999px; padding: 0.4rem 1rem;
+}
+
 /* ---- essentials strip ---- */
 .essentials {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

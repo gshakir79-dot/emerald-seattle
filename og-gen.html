@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>og generator</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>html,body{margin:0;padding:0;background:#0a1220;overflow:hidden}canvas{display:block;width:1200px;height:630px}</style>
+</head>
+<body>
+<canvas id="c" width="1200" height="630"></canvas>
+<script>
+async function draw() {
+  await document.fonts.load('300 170px Fraunces');
+  await document.fonts.load('italic 340 170px Fraunces');
+  await document.fonts.load('500 26px "JetBrains Mono"');
+  const x = document.getElementById('c').getContext('2d');
+
+  // sky
+  const sky = x.createLinearGradient(0, 0, 0, 630);
+  sky.addColorStop(0, '#0a1220'); sky.addColorStop(0.62, '#13233a');
+  sky.addColorStop(0.85, '#2a4159'); sky.addColorStop(1, '#3d3a50');
+  x.fillStyle = sky; x.fillRect(0, 0, 1200, 630);
+
+  // stars
+  x.fillStyle = '#cfe3f5';
+  for (let i = 0; i < 60; i++) {
+    x.globalAlpha = Math.random() * 0.5 + 0.15;
+    x.fillRect(Math.random() * 1200, Math.random() * 260, 2, 2);
+  }
+  x.globalAlpha = 1;
+
+  // Rainier
+  x.fillStyle = '#3c4a62';
+  x.beginPath(); x.moveTo(830, 520); x.lineTo(990, 300); x.lineTo(1015, 325);
+  x.lineTo(1040, 305); x.lineTo(1065, 330); x.lineTo(1090, 310); x.lineTo(1230, 520); x.closePath(); x.fill();
+  x.fillStyle = '#e9d7cb';
+  x.beginPath(); x.moveTo(990, 300); x.lineTo(1015, 325); x.lineTo(1040, 305); x.lineTo(1065, 330);
+  x.lineTo(1090, 310); x.lineTo(1115, 360); x.lineTo(1080, 350); x.lineTo(1050, 366);
+  x.lineTo(1018, 352); x.lineTo(990, 368); x.lineTo(962, 350); x.closePath(); x.fill();
+
+  // skyline
+  x.fillStyle = '#152238';
+  const b = [[60,455,52],[125,430,42],[180,470,60],[560,440,50],[625,415,38],[675,460,56],[1080,455,48],[1140,430,46]];
+  b.forEach(([bx, by, bw]) => x.fillRect(bx, by, bw, 520 - by));
+  // columbia center
+  x.beginPath(); x.moveTo(745, 520); x.lineTo(745, 395);
+  x.quadraticCurveTo(765, 372, 785, 395); x.lineTo(785, 520); x.closePath(); x.fill();
+  // needle
+  x.beginPath(); x.moveTo(905, 520); x.lineTo(912, 415); x.lineTo(918, 415); x.lineTo(925, 520); x.closePath(); x.fill();
+  x.fillRect(912, 388, 6, 30);
+  x.beginPath(); x.ellipse(915, 386, 38, 10, 0, 0, Math.PI * 2); x.fill();
+  x.fillStyle = '#ffd9a0'; x.beginPath(); x.arc(915, 368, 3.5, 0, Math.PI * 2); x.fill();
+  // window lights
+  x.fillStyle = '#ffd9a0';
+  b.concat([[745,400,40]]).forEach(([bx, by, bw]) => {
+    for (let wy = by + 12; wy < 508; wy += 15)
+      for (let wx = bx + 6; wx < bx + bw - 6; wx += 11)
+        if (Math.random() < 0.35) { x.globalAlpha = Math.random() * 0.5 + 0.35; x.fillRect(wx, wy, 3.5, 4.5); }
+  });
+  x.globalAlpha = 1;
+
+  // water
+  const water = x.createLinearGradient(0, 520, 0, 630);
+  water.addColorStop(0, '#16283e'); water.addColorStop(1, '#0a1522');
+  x.fillStyle = water; x.fillRect(0, 520, 1200, 110);
+  x.strokeStyle = 'rgba(61,90,122,0.5)'; x.lineWidth = 2;
+  [[80,552,190],[420,575,560],[700,558,820],[1000,580,1130]].forEach(([x1, y, x2]) => {
+    x.beginPath(); x.moveTo(x1, y); x.lineTo(x2, y); x.stroke();
+  });
+
+  // text
+  x.fillStyle = '#3ddc97';
+  x.font = '500 25px "JetBrains Mono"';
+  x.fillText('4 7 . 6 0 6 2 °  N   —   A   S E A T T L E   F I E L D   G U I D E', 74, 150);
+  x.fillStyle = '#eef4f8';
+  x.font = '300 172px Fraunces';
+  x.fillText('EMER', 64, 320);
+  const w = x.measureText('EMER').width;
+  x.fillStyle = '#3ddc97';
+  x.font = 'italic 340 172px Fraunces';
+  x.fillText('ALD', 64 + w + 6, 320);
+  x.fillStyle = '#c6d4e0';
+  x.font = '500 24px "JetBrains Mono"';
+  x.fillText('NEIGHBORHOODS · FOOD DOCTRINE · DAY TRIPS · NO FILLER', 74, 400);
+
+  document.title = 'og-ready';
+}
+draw();
+</script>
+</body>
+</html>

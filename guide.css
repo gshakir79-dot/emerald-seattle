@@ -195,6 +195,17 @@
 .pn.all span { color: var(--emerald); }
 .pn.empty { background: var(--ink); }
 
+/* ---- this weekend ---- */
+.pick-day { font-size: 0.66rem; letter-spacing: 0.12em; color: var(--gold); }
+.stale-note {
+  border: 1px dashed rgba(255, 217, 160, 0.4); background: rgba(255, 217, 160, 0.05);
+  color: var(--fog); font-size: 0.9rem;
+  padding: 1.1rem 1.5rem; margin-bottom: 2.5rem;
+}
+.stale-note b { color: var(--gold); font-weight: 500; }
+.nl-band { padding-bottom: 5rem; }
+.nl-band .newsletter { max-width: 640px; }
+
 @media (max-width: 900px) {
   .stop { grid-template-columns: 1fr; gap: 0.4rem; }
   .pagenav { grid-template-columns: 1fr; }

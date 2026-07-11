@@ -529,6 +529,32 @@ const dayTrips = [
   },
 ];
 
+/* This-weekend dispatch — update weekly, then `node build.js`.
+   Picks with passed dates trigger a stale banner automatically (page.js). */
+const weekend = {
+  updated: "July 11, 2026",
+  label: "July 11–12, 2026",
+  endDate: "2026-07-12", // last day of this weekend, ISO — drives the stale check
+  picks: [
+    { day: "SAT PM", title: "Georgetown Art Attack", text: "Second Saturday of the month means the whole Airport Way strip opens up — studios, galleries, pop-ups, live music, roughly 6–9 PM. Start at the Trailer Park Mall, end at Jules Maes Saloon.", link: { label: "Georgetown dossier", href: "/neighborhoods/georgetown/" } },
+    { day: "SAT AM", title: "University District Farmers Market", text: "One of the city's oldest and biggest — 9 AM to 2 PM, year-round, on University Way. Peak summer produce right now; berries are the assignment." },
+    { day: "SUN", title: "The market double-header", text: "Ballard Farmers Market in the morning, then the flat 25-minute canal walk to the Fremont Sunday Market. Two markets, one troll, zero driving.", link: { label: "Ballard dossier", href: "/neighborhoods/ballard/" } },
+    { day: "ALL WKND", title: "Sockeye at the Locks", text: "July is peak salmon-ladder season at the Ballard Locks — the underwater viewing windows are as busy as they get all year. Free, open daily.", link: { label: "The Locks", href: "/neighborhoods/ballard/" } },
+    { day: "GOLDEN HR", title: "Kerry Park at ~9:05 PM", text: "Mid-July sunsets land just after nine. Clear evening? Be on the Queen Anne overlook twenty minutes early with takeout.", link: { label: "Queen Anne dossier", href: "/neighborhoods/queen-anne-seattle-center/" } },
+    { day: "IF CLEAR", title: "Rainier's meadows are waking up", text: "Paradise wildflowers typically start mid-July. If the Mountain is out, this is the weekend window opening — book the timed entry before you drive.", link: { label: "Rainier day trip", href: "/day-trips/mount-rainier/" } },
+  ],
+  seasonNote: "July is festival season — Seafair events, food festivals, and block parties rotate through the calendar, and their dates shift year to year. Check the organizers directly before building a day around one.",
+  protocol: [
+    { time: "SAT 8:00", title: "Bakery run", text: "Croissant economics are ruthless: the good stuff is gone by 10. Pick your bakery from the doctrine and go." },
+    { time: "SAT 10:00", title: "A market or the Locks", text: "Saturday markets (U-District, Capitol Hill in season) or boats-and-salmon at the Ballard Locks." },
+    { time: "SAT 14:00", title: "One dossier, done properly", text: "Pick a single neighborhood and give it the afternoon. Resist the urge to sample three." },
+    { time: "SAT 20:00", title: "A show", text: "Check the Tractor, Neumos, and the Crocodile calendars. This city exported grunge; the rooms still deliver." },
+    { time: "SUN 10:00", title: "Ballard → Fremont", text: "The Sunday market double-header, connected by the canal path. Lunch from whichever stall has the longest local line." },
+    { time: "SUN 17:00", title: "Water taxi to Alki", text: "Fish and chips on the beach, skyline behind you, Olympics going pink across the Sound." },
+    { time: "SUN 20:45", title: "Golden hour, Kerry Park", text: "End the weekend with the postcard. Free, always open, never gets old." },
+  ],
+};
+
 /* trip card art — same SVGs as the homepage cards, reused on detail pages */
 const tripArt = {
   "mount-rainier": `<svg class="trip-art" viewBox="0 0 300 160"><rect width="300" height="160" fill="#16273d"/><path d="M30 160 L150 30 L175 55 L200 35 L270 160 Z" fill="#4a5a74"/><path d="M150 30 L175 55 L200 35 L226 78 L188 66 L162 82 L128 62 Z" fill="#efe4da"/><circle cx="60" cy="42" r="14" fill="#e9c4ad" opacity="0.9"/><path d="M0 160 L60 120 L110 145 L160 118 L220 148 L300 125 L300 160 Z" fill="#0f1c2e"/></svg>`,
@@ -539,4 +565,4 @@ const tripArt = {
   "olympic-peninsula": `<svg class="trip-art" viewBox="0 0 300 160"><rect width="300" height="160" fill="#16273d"/><path d="M0 160 L70 60 L100 90 L140 50 L180 95 L230 45 L300 160 Z" fill="#31435e"/><path d="M140 50 L158 72 L128 68 Z M230 45 L250 72 L214 66 Z" fill="#efe4da"/><path d="M20 160 l14 -30 4 0 14 30 M60 160 l16 -36 4 0 16 36 M250 160 l14 -28 4 0 14 28" fill="#0f2438"/><path d="M0 150 Q150 138 300 150 L300 160 L0 160 Z" fill="#0d1a2b"/></svg>`,
 };
 
-module.exports = { neighborhoods, eatCategories, dayTrips, tripArt };
+module.exports = { neighborhoods, eatCategories, dayTrips, tripArt, weekend };

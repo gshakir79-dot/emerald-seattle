@@ -453,6 +453,60 @@ body.raining #rain-layer { opacity: 1; }
   color: var(--mist);
 }
 
+/* ============ DISPATCH / NEWSLETTER ============ */
+.dispatch { border-top: 1px solid var(--line); }
+.dispatch-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  align-items: center;
+}
+.dispatch-grid h2 {
+  font-family: var(--serif); font-weight: 340;
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem); line-height: 1.05;
+  color: var(--snow);
+}
+.dispatch-grid h2 em { font-style: italic; color: var(--emerald); }
+.dispatch .section-lede { margin: 1.2rem 0 2rem; }
+
+.newsletter {
+  background: var(--ink-2); border: 1px solid var(--line);
+  border-top: 2px solid var(--emerald);
+  padding: 2.4rem 2.4rem 2rem;
+}
+.nl-kicker {
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.24em;
+  text-transform: uppercase; color: var(--emerald); margin-bottom: 1rem;
+}
+.newsletter h3 {
+  font-family: var(--serif); font-weight: 420; font-size: 1.7rem;
+  color: var(--snow); margin-bottom: 0.7rem;
+}
+.newsletter p { font-size: 0.92rem; color: var(--mist); margin-bottom: 1.6rem; }
+.nl-form { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.nl-form input {
+  flex: 1 1 220px; background: var(--ink); border: 1px solid var(--line);
+  color: var(--snow); padding: 0.9rem 1.1rem; border-radius: 2px;
+  font-family: var(--mono); font-size: 0.82rem;
+  transition: border-color 0.3s;
+}
+.nl-form input:focus { outline: none; border-color: var(--emerald); }
+.nl-form input::placeholder { color: var(--mist); opacity: 0.6; }
+.nl-form button {
+  background: var(--emerald); color: var(--ink); border: none; cursor: pointer;
+  font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.14em;
+  font-weight: 500; padding: 0.9rem 1.7rem; border-radius: 2px;
+  transition: background 0.3s, transform 0.3s;
+}
+.nl-form button:hover { background: var(--snow); transform: translateY(-1px); }
+.nl-note {
+  display: block; margin-top: 0.9rem;
+  font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.14em;
+  color: var(--mist);
+}
+
+@media (max-width: 900px) {
+  .dispatch-grid { grid-template-columns: 1fr; gap: 3rem; }
+}
+
 /* ============ REVEAL ============ */
 .reveal {
   opacity: 0; transform: translateY(28px);

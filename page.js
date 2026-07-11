@@ -21,6 +21,15 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 })();
 
+// this-weekend: flag dated picks once their weekend has passed
+(() => {
+  const picks = document.getElementById('picks');
+  const note = document.getElementById('staleNote');
+  if (!picks || !note) return;
+  const end = new Date(picks.dataset.weekendEnd + 'T23:59:59');
+  if (Date.now() > end.getTime()) note.hidden = false;
+})();
+
 // Leaflet map — called after the Leaflet script loads
 window.__initMap = () => {
   const el = document.getElementById('map');

@@ -5,12 +5,14 @@
 
 const fs = require("fs");
 const path = require("path");
-const { neighborhoods, eatCategories, dayTrips, tripArt } = require("./data.js");
+const { neighborhoods, eatCategories, dayTrips, tripArt, weekend } = require("./data.js");
 
 // Live at GitHub Pages for now; change to the custom domain when purchased, then `node build.js` and push.
 const ORIGIN = "https://gshakir79-dot.github.io/emerald-seattle";
 const VERIFIED = "July 2026"; // bump when content is re-checked
 const REPO_ISSUES = "https://github.com/gshakir79-dot/emerald-seattle/issues";
+// Buttondown newsletter — claim this exact username at buttondown.com (free) and the form goes live.
+const NEWSLETTER_ACTION = "https://buttondown.com/api/emails/embed-subscribe/emerald-seattle";
 const ROOT = __dirname;
 
 const gmaps = (q) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q + ", Seattle area, WA")}`;
@@ -68,7 +70,7 @@ ${hasMap ? `<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/le
     <a href="/neighborhoods/">Neighborhoods</a>
     <a href="/eat/">Eat &amp; Drink</a>
     <a href="/day-trips/">Day Trips</a>
-    <a href="/#itineraries">Itineraries</a>
+    <a href="/this-weekend/">This Weekend</a>
     <a href="/about/">About</a>
   </nav>
   <a class="rain-toggle nav-back" href="/">← The Guide</a>
@@ -87,7 +89,7 @@ ${body}
       <p>A field guide to Seattle &amp; the Salish Sea.<br>Drawn entirely in code. No stock photos were harmed.</p>
     </div>
     <div class="footer-cols">
-      <div><h4>Guide</h4><a href="/neighborhoods/">Neighborhoods</a><a href="/eat/">Eat &amp; Drink</a><a href="/#itineraries">Itineraries</a></div>
+      <div><h4>Guide</h4><a href="/neighborhoods/">Neighborhoods</a><a href="/eat/">Eat &amp; Drink</a><a href="/this-weekend/">This Weekend</a></div>
       <div><h4>Beyond</h4><a href="/day-trips/">Day Trips</a><a href="/#seasons">Seasons</a><a href="/about/">About</a></div>
     </div>
   </div>
@@ -394,6 +396,86 @@ function tripsIndex() {
   });
 }
 
+/* ---------- newsletter fragment ---------- */
+
+function newsletterHtml() {
+  return `
+    <div class="newsletter reveal">
+      <p class="nl-kicker">The Field Note</p>
+      <h3>One dispatch. Thursday mornings.</h3>
+      <p>The weekend shortlist, one dossier update, and whether the Mountain plans to show. Written by the same desk, same rules — no spam, ever.</p>
+      <form class="nl-form" action="${NEWSLETTER_ACTION}" method="post" target="_blank">
+        <input type="email" name="email" required placeholder="you@example.com" aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
+      <span class="nl-note">Free · Unsubscribe anytime</span>
+    </div>`;
+}
+
+/* ---------- this weekend ---------- */
+
+function weekendPage() {
+  const crumbs = [
+    { name: "EMERALD", href: "/" },
+    { name: "This Weekend", href: "/this-weekend/" },
+  ];
+  const body = `
+<main class="page">
+  <section class="page-hero">
+    <div class="wrap">
+      ${crumbsHtml(crumbs)}
+      <p class="kicker reveal">The Dispatch — Updated ${weekend.updated}</p>
+      <h1 class="page-title reveal">This weekend <em>in Seattle</em></h1>
+      <p class="lede reveal">What's actually worth your Saturday and Sunday — a short list, field rules apply. Below it, the evergreen weekend protocol that never expires.</p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="stale-note" id="staleNote" hidden>
+      These dated picks are from the weekend of <b>${weekend.label}</b> — a fresh dispatch lands each week.
+      The weekend protocol below never expires.
+    </div>
+
+    <div class="stops-head reveal"><p class="kicker">The Shortlist — ${weekend.label}</p></div>
+    <div class="stops" id="picks" data-weekend-end="${weekend.endDate}">
+      ${weekend.picks.map((p) => `
+      <article class="stop reveal">
+        <div class="stop-num pick-day">${p.day}</div>
+        <div class="stop-body">
+          <h3>${p.title}</h3>
+          <p>${p.text}</p>
+          ${p.link ? `<div class="stop-foot"><a class="stop-link" href="${p.link.href}">${p.link.label} →</a></div>` : ""}
+        </div>
+      </article>`).join("")}
+    </div>
+
+    <aside class="tip-block reveal">
+      <span class="tip-label">Season check</span>
+      <p>${weekend.seasonNote}</p>
+    </aside>
+  </section>
+
+  <section class="section-paper plan-band">
+    <div class="wrap">
+      <div class="stops-head reveal"><p class="kicker">The Weekend Protocol — Evergreen</p></div>
+      <div class="timeline">
+        ${weekend.protocol.map((p) => `
+        <div class="tl-item reveal"><span class="tl-time">${p.time}</span><div><h4>${p.title}</h4><p>${p.text}</p></div></div>`).join("")}
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap nl-band">
+    ${newsletterHtml()}
+  </section>
+</main>`;
+  return shell({
+    title: "This Weekend in Seattle", urlPath: "/this-weekend/",
+    desc: "What to do in Seattle this weekend: a hand-picked shortlist updated weekly, plus the evergreen weekend protocol — markets, shows, golden hour, and day-trip calls.",
+    body, hasMap: false, crumbs,
+  });
+}
+
 /* ---------- about page ---------- */
 
 function aboutPage() {
@@ -469,6 +551,7 @@ function emit(rel, html) {
 }
 
 emit("about", aboutPage());
+emit("this-weekend", weekendPage());
 emit("neighborhoods", neighborhoodsIndex());
 neighborhoods.forEach((h, i) => emit(`neighborhoods/${h.slug}`, neighborhoodPage(h, i)));
 emit("eat", eatIndex());

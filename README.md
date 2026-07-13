@@ -3,7 +3,7 @@
 An opinionated, hand-crafted tourist guide to Seattle and the Salish Sea.
 Every visual is procedural SVG — no stock photos, no frameworks, no build dependencies.
 
-**Live:** https://gshakir79-dot.github.io/emerald-seattle/
+**Live:** https://emerald-seattle.com/ (GitHub Pages, custom domain via `CNAME`)
 
 ## Structure
 
@@ -26,8 +26,8 @@ Regenerates all 23 sub-pages plus `sitemap.xml` and `robots.txt`.
 
 Any static server, e.g. `npx serve .` — or just open `index.html` directly (all links are relative).
 
-## Custom domain checklist (when purchased)
+## Custom domain
 
-1. Change `ORIGIN` in `build.js`, run `node build.js`
-2. Update the hardcoded home link in `404.html`
-3. Add a `CNAME` file containing the domain; configure DNS per GitHub Pages docs
+Domain purchased 2026-07-13 (Porkbun). `CNAME` file at repo root + `ORIGIN` in `build.js`
+both point at `emerald-seattle.com`. DNS: A records (apex) to GitHub Pages IPs, `www` CNAME
+to `gshakir79-dot.github.io`. Enforce HTTPS is set in repo Settings → Pages.

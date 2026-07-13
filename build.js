@@ -7,8 +7,7 @@ const fs = require("fs");
 const path = require("path");
 const { neighborhoods, eatCategories, dayTrips, tripArt, weekend } = require("./data.js");
 
-// Live at GitHub Pages for now; change to the custom domain when purchased, then `node build.js` and push.
-const ORIGIN = "https://gshakir79-dot.github.io/emerald-seattle";
+const ORIGIN = "https://emerald-seattle.com";
 const VERIFIED = "July 2026"; // bump when content is re-checked
 const REPO_ISSUES = "https://github.com/gshakir79-dot/emerald-seattle/issues";
 // Buttondown newsletter — claim this exact username at buttondown.com (free) and the form goes live.

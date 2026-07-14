@@ -5,7 +5,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const { neighborhoods, eatCategories, dayTrips, tripArt, weekend } = require("./data.js");
+const { neighborhoods, eatCategories, dayTrips, itineraries, tripArt, weekend } = require("./data.js");
 
 const ORIGIN = "https://emerald-seattle.com";
 const VERIFIED = "July 2026"; // bump when content is re-checked
@@ -68,6 +68,7 @@ ${hasMap ? `<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/le
   <nav class="nav-links">
     <a href="/neighborhoods/">Neighborhoods</a>
     <a href="/eat/">Eat &amp; Drink</a>
+    <a href="/itineraries/">Itineraries</a>
     <a href="/day-trips/">Day Trips</a>
     <a href="/this-weekend/">This Weekend</a>
     <a href="/about/">About</a>
@@ -88,7 +89,7 @@ ${body}
       <p>A field guide to Seattle &amp; the Salish Sea.<br>Drawn entirely in code. No stock photos were harmed.</p>
     </div>
     <div class="footer-cols">
-      <div><h4>Guide</h4><a href="/neighborhoods/">Neighborhoods</a><a href="/eat/">Eat &amp; Drink</a><a href="/this-weekend/">This Weekend</a></div>
+      <div><h4>Guide</h4><a href="/neighborhoods/">Neighborhoods</a><a href="/eat/">Eat &amp; Drink</a><a href="/itineraries/">Itineraries</a><a href="/this-weekend/">This Weekend</a></div>
       <div><h4>Beyond</h4><a href="/day-trips/">Day Trips</a><a href="/#seasons">Seasons</a><a href="/about/">About</a></div>
     </div>
   </div>
@@ -395,6 +396,91 @@ function tripsIndex() {
   });
 }
 
+/* ---------- itinerary pages ---------- */
+
+function itineraryPage(t, i) {
+  const prev = itineraries[i - 1], next = itineraries[i + 1];
+  const crumbs = [
+    { name: "EMERALD", href: "/" },
+    { name: "Itineraries", href: "/itineraries/" },
+    { name: t.shortName, href: `/itineraries/${t.slug}/` },
+  ];
+  const body = `
+<main class="page">
+  <section class="page-hero trip-hero">
+    <div class="wrap">
+      ${crumbsHtml(crumbs)}
+      <p class="kicker reveal">The Plan — ${t.meta.join(" · ")}</p>
+      <h1 class="page-title reveal">${t.name}</h1>
+      <p class="lede reveal">${t.lede}</p>
+      <p class="stamp reveal">✓ Field-checked ${VERIFIED}</p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="essentials reveal">
+      ${t.stats.map(([k, v]) => `<div class="ess"><span>${k}</span><b>${v}</b></div>`).join("")}
+    </div>
+  </section>
+
+  <section class="section-paper plan-band">
+    <div class="wrap">
+      <div class="stops-head reveal"><p class="kicker">Hour by Hour</p></div>
+      <div class="timeline">
+        ${t.plan.map((p) => `
+        <div class="tl-item reveal"><span class="tl-time">${p.time}</span><div><h4>${p.title}</h4><p>${p.text}</p></div></div>`).join("")}
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    ${mapBlock(t.map.center, t.map.zoom, t.markers)}
+    <div class="ntk reveal">
+      <p class="kicker">Need to know</p>
+      <ul>${t.needToKnow.map((n) => `<li>${n}</li>`).join("")}</ul>
+    </div>
+  </section>
+
+  ${pagenav(prev, next, "/itineraries/", "itineraries")}
+</main>`;
+  return shell({
+    title: t.name, desc: t.metaDesc,
+    urlPath: `/itineraries/${t.slug}/`, body, hasMap: true, crumbs,
+  });
+}
+
+function itinerariesIndex() {
+  const crumbs = [
+    { name: "EMERALD", href: "/" },
+    { name: "Itineraries", href: "/itineraries/" },
+  ];
+  const cards = itineraries.map((t) => `
+    <a class="trip reveal idx-trip" href="/itineraries/${t.slug}/">
+      <div class="trip-body">
+        <div class="trip-meta"><span>${t.hours}</span><span>${t.meta[0]}</span></div>
+        <h3>${t.name}</h3>
+        <p>${t.teaser}</p>
+      </div>
+    </a>`).join("");
+  const body = `
+<main class="page">
+  <section class="page-hero">
+    <div class="wrap">
+      ${crumbsHtml(crumbs)}
+      <p class="kicker reveal">03 — The Plan</p>
+      <h1 class="page-title reveal">Itineraries, <em>hour by hour</em></h1>
+      <p class="lede reveal">Three lengths, each mapped and stacked on the one before it: 24 hours for a first taste, 48 for the neighborhoods, 72 for the ones who don't want to leave.</p>
+    </div>
+  </section>
+  <section class="wrap"><div class="trips-grid">${cards}</div></section>
+</main>`;
+  return shell({
+    title: "Seattle Itineraries", urlPath: "/itineraries/",
+    desc: "Hour-by-hour Seattle itineraries for 24, 48, and 72 hours — mapped stops, honest logistics, and what to do with a second or third day in the city.",
+    body, hasMap: false, crumbs,
+  });
+}
+
 /* ---------- newsletter fragment ---------- */
 
 function newsletterHtml() {
@@ -557,6 +643,8 @@ emit("eat", eatIndex());
 eatCategories.forEach((c, i) => emit(`eat/${c.slug}`, eatPage(c, i)));
 emit("day-trips", tripsIndex());
 dayTrips.forEach((t, i) => emit(`day-trips/${t.slug}`, tripPage(t, i)));
+emit("itineraries", itinerariesIndex());
+itineraries.forEach((t, i) => emit(`itineraries/${t.slug}`, itineraryPage(t, i)));
 
 /* sitemap + robots */
 const urls = ["/", ...pages];

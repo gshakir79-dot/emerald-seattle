@@ -356,6 +356,13 @@ body.raining #rain-layer { opacity: 1; }
 }
 .tl-item p { font-size: 0.93rem; color: #4c5866; max-width: 620px; }
 
+.tab-more { margin-top: 1.6rem; }
+.tab-more a {
+  font-family: var(--mono); font-size: 0.82rem; letter-spacing: 0.06em;
+  color: var(--emerald-deep); text-decoration: none; font-weight: 500;
+}
+.tab-more a:hover { text-decoration: underline; }
+
 /* ============ DAY TRIPS ============ */
 .trips {
   display: flex; gap: 1.6rem; overflow-x: auto;

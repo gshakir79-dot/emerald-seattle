@@ -529,6 +529,124 @@ const dayTrips = [
   },
 ];
 
+const itineraries = [
+  {
+    slug: "24-hours",
+    num: "01",
+    name: "24 Hours in Seattle",
+    shortName: "24 Hours",
+    hours: "24 HOURS",
+    meta: ["6 STOPS", "FIRST-TIMERS"],
+    teaser: "Market before the crowds, the new waterfront, a C-ID lunch, Chihuly at dusk, and the postcard from Kerry Park.",
+    metaDesc: "The perfect 24 hours in Seattle: Pike Place before the crowds, the Overlook Walk, a Chinatown-International District lunch, Chihuly Garden & Glass, Kerry Park at golden hour, and Capitol Hill for dinner.",
+    lede: `One day, done right, hits the market, the water, two neighborhoods, and the single best view in the city — without ever feeling rushed if you start early.`,
+    stats: [
+      ["PACE", "Brisk — start by 7:30"],
+      ["STOPS", "6, across 4 neighborhoods"],
+      ["GET AROUND", "Walking + one light rail hop"],
+      ["BEST FOR", "First-timers with one shot at the city"],
+    ],
+    plan: [
+      { time: "7:30", title: "Pike Place, before the crowds", text: "Coffee at Storyville overlooking the market sign, watch the vendors set up, first salmon toss of the day." },
+      { time: "10:00", title: "Overlook Walk → Waterfront", text: "Descend the new stair-park to Elliott Bay. Seattle Aquarium if you have kids; otherwise just breathe the salt air." },
+      { time: "12:30", title: "Lunch in the C-ID", text: "Light rail two stops south. Pho, BBQ pork over rice, or hand-pulled noodles. Snack run through Uwajimaya after." },
+      { time: "15:00", title: "Seattle Center", text: "Space Needle or — hot take — skip it and do Chihuly Garden & Glass instead. The glasshouse at dusk is unreal." },
+      { time: "18:00", title: "Kerry Park golden hour", text: "Ten-minute climb up Queen Anne. The photo you came for: Needle, skyline, Rainier if she's out." },
+      { time: "20:00", title: "Dinner + nightcap, Capitol Hill", text: "Walk-ins at the bar are the local move. End at Canon or a dive on Pike/Pine, depending on your constitution." },
+    ],
+    needToKnow: [
+      "Book Chihuly Garden & Glass tickets online — the timed-entry queue in person can eat 30 minutes you don't have.",
+      "Kerry Park has maybe a dozen parking spots and no lot; arrive 20 minutes before sunset or plan to circle.",
+      "The C-ID hop is one Link light rail stop from Westlake or two from Pioneer Square — tap your ORCA card, don't drive.",
+    ],
+    map: { center: [47.614, -122.338], zoom: 12 },
+    markers: [
+      { name: "Storyville Coffee", address: "94 Pike St, Suite 34", coords: [47.6089, -122.3401] },
+      { name: "Overlook Walk", address: "Pike St & Western Ave", coords: [47.6081, -122.3432] },
+      { name: "Uwajimaya", address: "600 5th Ave S", coords: [47.5975, -122.3282] },
+      { name: "Chihuly Garden & Glass", address: "305 Harrison St", coords: [47.6214, -122.3493] },
+      { name: "Kerry Park", address: "211 W Highland Dr", coords: [47.6295, -122.3599] },
+      { name: "Capitol Hill (Pike/Pine)", address: "Pike St & 11th Ave", coords: [47.6142, -122.321] },
+    ],
+  },
+  {
+    slug: "48-hours",
+    num: "02",
+    name: "48 Hours in Seattle",
+    shortName: "48 Hours",
+    hours: "48 HOURS",
+    meta: ["5 STOPS", "NEIGHBORHOOD HOPPERS"],
+    teaser: "Add a second day: the Ballard Locks, a neighborhood crawl, Fremont's weirdness, and Alki at sunset via water taxi.",
+    metaDesc: "Seattle in 48 hours: the day-two plan after the 24-hour itinerary — Ballard Locks and fish ladder, Ballard Ave, Fremont's troll and rocket, a water taxi to Alki Beach, and live music at night.",
+    lede: `Day two is the neighborhood-hopping day — north to the boats and salmon at the Locks, over to Fremont's committed weirdness, then a water taxi across the bay for sunset on Alki. Pairs with the 24-hour plan as the front half.`,
+    stats: [
+      ["PACE", "Moderate — day 2 of a 2-day trip"],
+      ["STOPS", "5, across 3 neighborhoods"],
+      ["GET AROUND", "Walking + a short water taxi crossing"],
+      ["BEST FOR", "Visitors adding a second full day"],
+    ],
+    plan: [
+      { time: "9:00", title: "Ballard Locks & the fish ladder", text: "Boats going up, salmon going upstream, herons supervising. Free and genuinely mesmerizing." },
+      { time: "11:30", title: "Ballard Ave crawl", text: "Sunday? Farmers market. Any day: record shops, Nordic Museum, then oysters at Walrus when doors open at 4 — or brewery-hop until then." },
+      { time: "14:30", title: "Fremont weirdness tour", text: "Troll → rocket → Lenin → canal path. Gasworks Park for the skyline-over-kites panorama." },
+      { time: "17:30", title: "Water taxi to West Seattle", text: "Five minutes across the bay, skyline glowing behind you. Fish and chips on Alki as the sun drops behind the Olympics." },
+      { time: "21:00", title: "Live music", text: "Check the Crocodile, Neumos, or Tractor Tavern. This city exported grunge; the venues still deliver." },
+    ],
+    needToKnow: [
+      "The West Seattle Water Taxi runs on a seasonal schedule (daily roughly April–October, weekdays-only in winter) — check King County Metro's schedule before you plan the crossing.",
+      "Ballard Ave is closed to cars for the Sunday farmers market (year-round, 10 AM–3 PM) — a plus for walking, a headache if you drove.",
+      "Book one live-music ticket ahead if there's a touring act; the walk-in door price is a gamble on a Friday.",
+    ],
+    map: { center: [47.645, -122.375], zoom: 12 },
+    markers: [
+      { name: "Ballard Locks", address: "3015 NW 54th St", coords: [47.665, -122.3966] },
+      { name: "Ballard Ave", address: "Ballard Ave NW", coords: [47.6683, -122.3835] },
+      { name: "Fremont Troll", address: "N 36th St & Aurora Ave N", coords: [47.651, -122.3496] },
+      { name: "West Seattle Water Taxi (Seacrest dock)", address: "1660 Harbor Ave SW", coords: [47.5837, -122.4098] },
+      { name: "Tractor Tavern", address: "5213 Ballard Ave NW", coords: [47.6669, -122.3839] },
+    ],
+  },
+  {
+    slug: "72-hours",
+    num: "03",
+    name: "72 Hours in Seattle",
+    shortName: "72 Hours",
+    hours: "72 HOURS",
+    meta: ["6 STOPS", "EXTENDED STAYS"],
+    teaser: "Day three branches: a day trip into the mountains, or the unhurried city day — parks, books, art, and a farewell dinner worth booking ahead.",
+    metaDesc: "Seattle in 72 hours: the day-three plan after 48 hours in the city — choose a day trip to Mount Rainier or the San Juans, or the unhurried city day through Volunteer Park, SAM, and Georgetown, ending with a farewell dinner.",
+    lede: `By day three you've earned a choice. Chase alpine drama on one of the day trips, or stay in the city for the unhurried version below — parks, bookstores, art, and one last dinner worth booking in advance. Follows the 48-hour plan.`,
+    stats: [
+      ["PACE", "Flexible — day 3, your call"],
+      ["STOPS", "6 for the city-day route"],
+      ["GET AROUND", "Walking + a short drive to Georgetown"],
+      ["BEST FOR", "Extended stays with a day to spare"],
+    ],
+    plan: [
+      { time: "8:00", title: "Choose your day trip — or don't", text: "Rainier for alpine drama, Bainbridge for the easy ferry loop, Snoqualmie Falls if you're short on time. Details on each Day Trips page. Skip this and sleep in for the city-day route below." },
+      { time: "9:00", title: "Volunteer Park Conservatory", text: "A Victorian glasshouse of palms and cacti, usually near-empty on a weekday morning. The water tower next door has a free 360° view for the climb." },
+      { time: "11:00", title: "Elliott Bay Book Company", text: "Capitol Hill's cathedral of a bookstore. Basement café for a coffee break, then browse until something follows you to the register." },
+      { time: "13:00", title: "Seattle Art Museum (SAM)", text: "Downtown's big-ticket museum — Northwest Coast Native art and the rotating special exhibits are the draws. Closed Mondays." },
+      { time: "15:00", title: "Georgetown art walk", text: "Seattle's least-polished, most genuine arts district. Galleries, dive bars, and pizza at Via Tribunali in a converted garage." },
+      { time: "19:00", title: "Farewell dinner", text: "Book ahead once: The Walrus if you missed it, Sushi Kashiba, or Il Nido in a log cabin in West Seattle." },
+    ],
+    needToKnow: [
+      "SAM is closed Mondays — swap in the Georgetown art walk earlier and push dinner up if your day three lands on one.",
+      "Georgetown's biggest night is the second-Saturday Art Attack — check This Weekend before you plan around it, since it's monthly, not weekly.",
+      "Whichever farewell dinner you pick, call or book online a day ahead — all three routinely sell out same-day tables.",
+    ],
+    map: { center: [47.598, -122.335], zoom: 12 },
+    markers: [
+      { name: "Volunteer Park Conservatory", address: "1400 E Galer St", coords: [47.6303, -122.3151] },
+      { name: "Elliott Bay Book Company", address: "1521 10th Ave", coords: [47.6142, -122.3169] },
+      { name: "Seattle Art Museum", address: "1300 1st Ave", coords: [47.6075, -122.3382] },
+      { name: "Georgetown art walk", address: "Airport Way S, Georgetown", coords: [47.5551, -122.3286] },
+      { name: "Il Nido", address: "4747 California Ave SW", coords: [47.5623, -122.3866] },
+      { name: "Great Wheel (last look)", address: "1301 Alaskan Way", coords: [47.6076, -122.3428] },
+    ],
+  },
+];
+
 /* This-weekend dispatch — update weekly, then `node build.js`.
    Picks with passed dates trigger a stale banner automatically (page.js). */
 const weekend = {
@@ -565,4 +683,4 @@ const tripArt = {
   "olympic-peninsula": `<svg class="trip-art" viewBox="0 0 300 160"><rect width="300" height="160" fill="#16273d"/><path d="M0 160 L70 60 L100 90 L140 50 L180 95 L230 45 L300 160 Z" fill="#31435e"/><path d="M140 50 L158 72 L128 68 Z M230 45 L250 72 L214 66 Z" fill="#efe4da"/><path d="M20 160 l14 -30 4 0 14 30 M60 160 l16 -36 4 0 16 36 M250 160 l14 -28 4 0 14 28" fill="#0f2438"/><path d="M0 150 Q150 138 300 150 L300 160 L0 160 Z" fill="#0d1a2b"/></svg>`,
 };
 
-module.exports = { neighborhoods, eatCategories, dayTrips, tripArt, weekend };
+module.exports = { neighborhoods, eatCategories, dayTrips, itineraries, tripArt, weekend };

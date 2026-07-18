@@ -28,6 +28,7 @@ const neighborhoods = [
       { name: "Gum Wall", tag: "Regrettable, mandatory", blurb: "Down Post Alley under the market. Thousands of pieces of chewed gum on brick. You will take a photo. You will feel complicated about it.", address: "1428 Post Alley", coords: [47.6084, -122.3403] },
       { name: "Pike Place Chowder", tag: "The queue that's worth it", blurb: "Smoked salmon chowder in a bread bowl, eaten standing up. Go at an off-hour or order ahead; the line at noon is a tourist trap of your own making.", address: "1530 Post Alley", coords: [47.6096, -122.3417] },
       { name: "Sushi Kashiba", tag: "Book-ahead splurge", blurb: "Shiro Kashiba trained under Jiro before bringing edomae sushi to Seattle in 1966. Omakase at the bar if you can get it; book weeks out.", address: "86 Pine St, Suite 1", coords: [47.6100, -122.3408] },
+      { name: "Bill Speidel's Underground Tour", tag: "Ten minutes south, worth the detour", blurb: "Seattle rebuilt its street grade after the 1889 fire and left the old storefronts buried underneath. A guided walk through the buried city, equal parts history lecture and dry Seattle humor.", address: "608 1st Ave", coords: [47.6021, -122.3336] },
     ],
     tip: "The producers' and craft stalls rotate daily, so the market is literally a different market every visit. And say yes to samples — it's how the vendors want you to shop.",
   },
@@ -343,6 +344,7 @@ const dayTrips = [
       "Snow lingers at Paradise into July; trails can be icy when Seattle is sunny. Check conditions and bring real shoes.",
       "Cell service dies at the park boundary. Download offline maps before Ashford.",
       "Clear-day rule: if the Mountain is out in Seattle, it's spectacular up close. If it's socked in, consider Snoqualmie Falls instead — Paradise in a cloud is a very cold gray room.",
+      "Take SR-706 through Elbe on the way in — a one-block former logging town with the Mt. Rainier Scenic Railroad's steam engines parked trackside. A five-minute photo stop that costs you nothing.",
     ],
     map: { center: [46.8523, -121.7603], zoom: 9 },
     markers: [
@@ -379,6 +381,7 @@ const dayTrips = [
       "Fares are collected westbound only — the return ride is 'free.'",
       "Check the WSDOT ferries schedule the morning of; sailings occasionally cancel for crewing.",
       "Garden people: Bloedel Reserve, a 150-acre landscape masterpiece, is 15 minutes north by bus or taxi — book timed entry ahead.",
+      "Driving instead of walking on? Poulsbo — the self-styled 'Little Norway,' with a fjord-side main street of bakeries and Nordic gift shops — is 20 minutes north and pairs naturally with a Bainbridge afternoon.",
     ],
     map: { center: [47.6180, -122.4500], zoom: 12 },
     markers: [
@@ -438,7 +441,7 @@ const dayTrips = [
       ["WINTER NOTE", "Carry chains over the pass"],
     ],
     plan: [
-      { time: "8:00", title: "Drive US-2", text: "The Stevens Pass route is the scenic argument: Skykomish River, granite walls, and Deception Falls a two-minute leg-stretch off the highway." },
+      { time: "8:00", title: "Drive US-2", text: "The Stevens Pass route is the scenic argument: the tiny climbing-town of Index worth a glance off the highway, then the Skykomish River, granite walls, and Deception Falls a two-minute leg-stretch further on." },
       { time: "10:30", title: "Front Street", text: "The full Bavarian streetscape. München Haus for brats and a liter on the biergarten deck; the Gingerbread Factory for the kitsch course." },
       { time: "13:00", title: "Pick your afternoon", text: "Summer: float the Wenatchee River or walk the Icicle Gorge loop. Shoulder season: wine tasting rooms line the village. Connoisseurs of the absurd: the Nutcracker Museum has over 7,000 of them." },
       { time: "17:00", title: "Dinner and the drive home", text: "Or stay for the lights — from Thanksgiving through February the village glows nightly, and it is genuinely, unironically magical." },
@@ -446,6 +449,7 @@ const dayTrips = [
     needToKnow: [
       "December weekends are mobbed — hotels book out months ahead and Front Street becomes a slow shuffle. Go midweek for lights with elbow room.",
       "Loop option: go out via US-2, return via Blewett Pass and I-90 to make it a circle drive.",
+      "Wenatchee is 20 minutes further down US-2 — the 'Apple Capital,' with Ohme Gardens and a Columbia River waterfront path. Bolt it onto the end of a Leavenworth day if you're not ready to turn around.",
       "Winter travel over Stevens Pass can require chains — check WSDOT pass reports before leaving.",
     ],
     map: { center: [47.6300, -121.1000], zoom: 9 },
@@ -516,6 +520,7 @@ const dayTrips = [
       "Check the Hurricane Ridge road status before going — it's weather-gated even in shoulder seasons.",
       "For Rialto's Hole-in-the-Wall, consult a tide table and walk out on a falling tide.",
       "The Edmonds–Kingston ferry is often the faster crossing northbound; either boat works.",
+      "Want fewer crowds than the marquee three? Staircase, on the park's quiet southeast corner near Lake Cushman, has old-growth riverside trails and a fraction of the traffic.",
     ],
     map: { center: [47.9000, -123.8000], zoom: 8 },
     markers: [

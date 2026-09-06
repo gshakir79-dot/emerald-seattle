@@ -351,6 +351,7 @@ function tripPage(t, i) {
       <div class="ntk-actions">
         <a class="btn btn-solid" href="${gdir(t.directions)}" target="_blank" rel="noopener">Route it from Seattle ↗</a>
         ${t.ferryLink ? `<a class="btn btn-ghost" href="https://wsdot.wa.gov/travel/washington-state-ferries/schedule" target="_blank" rel="noopener">Ferry schedules ↗</a>` : ""}
+        ${t.bookLink ? `<a class="btn btn-ghost" href="${t.bookLink}" target="_blank" rel="noopener sponsored">${t.bookLinkLabel || "Book a tour ↗"}</a>` : ""}
       </div>
     </div>
   </section>

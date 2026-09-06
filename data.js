@@ -318,6 +318,11 @@ const eatCategories = [
   },
 ];
 
+// Optional per-trip fields (unset = no button rendered, zero visual change):
+//   bookLink:      full affiliate/booking URL (Viator, GetYourGuide, Booking.com, etc.)
+//   bookLinkLabel: button text, e.g. "Book the Paradise shuttle ↗" (defaults to "Book a tour ↗")
+// Only add these once a real affiliate account is approved — update the About page
+// disclosure in build.js (aboutPage()) in the same commit per the site's own disclosure policy.
 const dayTrips = [
   {
     slug: "mount-rainier",

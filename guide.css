@@ -158,6 +158,21 @@
 }
 .ntk-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
+/* ---- faq ---- */
+.faq { max-width: 820px; margin-bottom: 5rem; border-top: 1px solid var(--line); }
+.faq-item { border-bottom: 1px solid var(--line); padding: 1.4rem 0; }
+.faq-item summary {
+  cursor: pointer; list-style: none; font-family: var(--serif); font-weight: 400;
+  font-size: 1.05rem; color: var(--snow); padding-right: 1.6rem; position: relative;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+"; position: absolute; right: 0; top: -0.1rem;
+  color: var(--emerald); font-family: var(--mono); font-size: 1.1rem;
+}
+.faq-item[open] summary::after { content: "−"; }
+.faq-item p { color: var(--fog); font-size: 0.95rem; line-height: 1.6; margin-top: 1rem; }
+
 /* ---- index grids ---- */
 .idx-card { text-decoration: none; display: block; }
 .idx-more {

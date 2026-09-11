@@ -19,7 +19,7 @@ const gdir = (q) => `https://www.google.com/maps/dir/?api=1&destination=${encode
 
 /* ---------- shared shell ---------- */
 
-function shell({ title, desc, urlPath, body, hasMap, crumbs }) {
+function shell({ title, desc, urlPath, body, hasMap, crumbs, faqs }) {
   const breadcrumbLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -27,6 +27,14 @@ function shell({ title, desc, urlPath, body, hasMap, crumbs }) {
       "@type": "ListItem", position: i + 1, name: c.name, item: ORIGIN + c.href,
     })),
   };
+  const faqLd = faqs && faqs.length ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question", name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  } : null;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,6 +60,7 @@ ${hasMap ? `<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/le
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/guide.css">
 <script type="application/ld+json">${JSON.stringify(breadcrumbLd)}</script>
+${faqLd ? `<script type="application/ld+json">${JSON.stringify(faqLd)}</script>` : ""}
 </head>
 <body class="subpage">
 
@@ -146,6 +155,21 @@ function stopsHtml(stops, startNum = 1) {
     </article>`).join("");
 }
 
+function faqHtml(faqs) {
+  if (!faqs || !faqs.length) return "";
+  return `
+  <section class="wrap">
+    <div class="stops-head reveal"><p class="kicker">Common questions</p></div>
+    <div class="faq">
+      ${faqs.map((f) => `
+      <details class="faq-item reveal">
+        <summary>${f.q}</summary>
+        <p>${f.a}</p>
+      </details>`).join("")}
+    </div>
+  </section>`;
+}
+
 function pagenav(prev, next, base, label) {
   return `
   <nav class="pagenav wrap reveal" aria-label="More ${label}">
@@ -197,11 +221,13 @@ function neighborhoodPage(h, i) {
     </aside>
   </section>
 
+  ${faqHtml(h.faqs)}
+
   ${pagenav(prev, next, "/neighborhoods/", "neighborhoods")}
 </main>`;
   return shell({
     title: h.name, desc: h.metaDesc,
-    urlPath: `/neighborhoods/${h.slug}/`, body, hasMap: true, crumbs,
+    urlPath: `/neighborhoods/${h.slug}/`, body, hasMap: true, crumbs, faqs: h.faqs,
   });
 }
 
@@ -356,11 +382,13 @@ function tripPage(t, i) {
     </div>
   </section>
 
+  ${faqHtml(t.faqs)}
+
   ${pagenav(prev, next, "/day-trips/", "day trips")}
 </main>`;
   return shell({
     title: `${t.name} Day Trip`, desc: t.metaDesc,
-    urlPath: `/day-trips/${t.slug}/`, body, hasMap: true, crumbs,
+    urlPath: `/day-trips/${t.slug}/`, body, hasMap: true, crumbs, faqs: t.faqs,
   });
 }
 
@@ -442,11 +470,13 @@ function itineraryPage(t, i) {
     </div>
   </section>
 
+  ${faqHtml(t.faqs)}
+
   ${pagenav(prev, next, "/itineraries/", "itineraries")}
 </main>`;
   return shell({
     title: t.name, desc: t.metaDesc,
-    urlPath: `/itineraries/${t.slug}/`, body, hasMap: true, crumbs,
+    urlPath: `/itineraries/${t.slug}/`, body, hasMap: true, crumbs, faqs: t.faqs,
   });
 }
 

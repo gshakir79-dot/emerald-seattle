@@ -31,6 +31,11 @@ const neighborhoods = [
       { name: "Bill Speidel's Underground Tour", tag: "Ten minutes south, worth the detour", blurb: "Seattle rebuilt its street grade after the 1889 fire and left the old storefronts buried underneath. A guided walk through the buried city, equal parts history lecture and dry Seattle humor.", address: "608 1st Ave", coords: [47.6021, -122.3336] },
     ],
     tip: "The producers' and craft stalls rotate daily, so the market is literally a different market every visit. And say yes to samples — it's how the vendors want you to shop.",
+    faqs: [
+      { q: "What time should I get to Pike Place Market to beat the crowds?", a: "Before 9 AM on a weekday. Vendors are still setting up, the fish throwers are warming up, and Post Alley is nearly empty. By 11 AM on a Saturday the main arcade is a slow-motion crowd crush." },
+      { q: "Is the Pike Place gum wall still there?", a: "Yes — it's down in Post Alley below the market, and it's exactly as sticky and strange as photos suggest. It gets periodically power-washed and immediately starts refilling." },
+      { q: "How long does Pike Place Market take to see properly?", a: "Budget 2–4 hours if you're adding the Overlook Walk down to the waterfront. The market alone, moving briskly, is closer to 90 minutes." },
+    ],
   },
   {
     slug: "capitol-hill",
@@ -59,6 +64,11 @@ const neighborhoods = [
       { name: "Neumos", tag: "The venue", blurb: "The Pike/Pine anchor for touring bands since the Moe's days. Check the calendar with Barboza downstairs — something's always on.", address: "925 E Pike St", coords: [47.6139, -122.3195] },
     ],
     tip: "Don't over-plan dinner. Pick the corridor, walk it once, and take bar seats wherever feels right — Capitol Hill kitchens save their best hospitality for walk-ins at the bar.",
+    faqs: [
+      { q: "Do I need a dinner reservation on Capitol Hill?", a: "Not necessarily. Reservations help at the marquee spots, but the local move is walking in solo or as a pair and taking the bar seats — kitchens here treat the bar as the best table in the house." },
+      { q: "What's the best time to visit Volunteer Park?", a: "Any clear afternoon works, but golden hour is the payoff shot at the Conservatory. The water tower next door is free and gives a 360° view if you climb it." },
+      { q: "How do I get to Capitol Hill from downtown Seattle?", a: "Take the Link light rail directly to Capitol Hill station — it's one stop from Westlake and drops you right at the top of the Pike/Pine corridor." },
+    ],
   },
   {
     slug: "ballard",
@@ -87,6 +97,11 @@ const neighborhoods = [
       { name: "Tractor Tavern", tag: "Night cap with twang", blurb: "Ballard Ave's wood-floored, wagon-wheel-lit venue for Americana, folk, and whatever's rolling through. One of the best-sounding small rooms in the city.", address: "5213 Ballard Ave NW", coords: [47.6672, -122.3852] },
     ],
     tip: "The locks are free, open daily, and best around midday when boat traffic peaks. In salmon season, go to the fish-ladder windows first — everyone forgets them until they're leaving.",
+    faqs: [
+      { q: "When is salmon season at the Ballard Locks?", a: "Late June through September is peak, with the underwater viewing windows at their busiest in July. The locks themselves are free and open daily year-round." },
+      { q: "Is Ballard walkable without a car?", a: "Yes — the Locks, Ballard Avenue, the farmers market, and the breweries are all within an easy flat walk of each other. RapidRide D gets you there from downtown in about 25 minutes." },
+      { q: "What day is best to visit Ballard?", a: "Sunday, hands down — the year-round farmers market runs down the middle of Ballard Avenue by day, and the bars and breweries take over by night." },
+    ],
   },
   {
     slug: "fremont",
@@ -115,6 +130,11 @@ const neighborhoods = [
       { name: "Gas Works Park", tag: "The skyline seat", blurb: "Rusted industrial ruins, a kite hill, and the definitive Lake Union panorama. Sunset here with takeout is a complete Seattle evening.", address: "2101 N Northlake Way", coords: [47.6456, -122.3344] },
     ],
     tip: "Do Fremont on a Sunday and you can stack the flea market here with the Ballard Farmers Market — they're a 25-minute walk apart along the ship canal.",
+    faqs: [
+      { q: "What is the Fremont Troll?", a: "A two-ton concrete sculpture under the Aurora Bridge, gripping a real Volkswagen Beetle in its fist since 1990. It's free, always accessible, and best photographed early before the crowds arrive." },
+      { q: "Can I walk from Fremont to Ballard?", a: "Yes — it's a flat, scenic 25-minute walk along the Burke-Gilman Trail and the ship canal, making it easy to combine both neighborhoods in one day." },
+      { q: "Is Gas Works Park worth visiting?", a: "Very much so. It's a free hillside park built on a preserved 1906 gasification plant, with the best downtown-and-Lake-Union skyline view in the city, especially at sunset." },
+    ],
   },
   {
     slug: "queen-anne-seattle-center",
@@ -143,6 +163,11 @@ const neighborhoods = [
       { name: "Kerry Park", tag: "The postcard", blurb: "The definitive skyline viewpoint, 10 minutes up Queen Anne Ave. Needle, skyline, bay, and Rainier if she's out. Free, and better than most paid decks.", address: "211 W Highland Dr", coords: [47.6295, -122.3599] },
     ],
     tip: "Check whether the Mountain is out before committing to a paid observation deck. Overcast day? Do MoPOP and Chihuly instead and save the views — Kerry Park costs nothing whenever the sky clears.",
+    faqs: [
+      { q: "Is the Space Needle or Chihuly Garden and Glass better?", a: "Contrarian but correct: Chihuly, if you only buy one ticket. The glasshouse against the sky at dusk outclasses the elevator ride, and it's right next door to the Needle." },
+      { q: "Is Kerry Park free?", a: "Yes — it's a small public park, always open, with the definitive Seattle skyline shot: Space Needle, downtown, Elliott Bay, and Rainier on clear days. Best at golden hour." },
+      { q: "How do I get from downtown Seattle to Seattle Center?", a: "The Monorail — the original 1962 line — runs every ten minutes from Westlake Center and takes about two minutes. ORCA cards work." },
+    ],
   },
   {
     slug: "chinatown-international-district",
@@ -171,6 +196,11 @@ const neighborhoods = [
       { name: "Hing Hay Park", tag: "The neighborhood square", blurb: "Grand pagoda, ping-pong tables, tai chi in the mornings, and the best bench for eating whatever you just bought within a block of here.", address: "423 Maynard Ave S", coords: [47.5985, -122.3252] },
     ],
     tip: "Uwajimaya's food court is the neighborhood's most underrated lunch, and the grocery aisles are the best souvenir shop in Seattle — bring an empty tote.",
+    faqs: [
+      { q: "What's the best time to go for dim sum in Seattle's Chinatown-International District?", a: "Weekend mornings. Jade Garden's cart service is the classic experience, and dim sum thins out after early afternoon — go before noon for the full cart rotation." },
+      { q: "How do I get to the C-ID from downtown?", a: "One stop south on the Link light rail from Westlake, or a short walk from Pioneer Square. It's the fastest neighborhood hop on this list." },
+      { q: "Is the Wing Luke Museum worth the visit?", a: "Yes — it's a Smithsonian affiliate built into a 1910 immigrant workers' hotel, and it tells the neighborhood's story, including the 1942 Japanese-American incarceration, better than any guidebook can." },
+    ],
   },
   {
     slug: "west-seattle-alki",
@@ -198,6 +228,11 @@ const neighborhoods = [
       { name: "Bakery Nouveau", tag: "Worth the hill", blurb: "William Leaman took a U.S. team to the Coupe du Monde de la Boulangerie and then opened this. The twice-baked almond croissant has a citywide following.", address: "4737 California Ave SW", coords: [47.5609, -122.3868] },
     ],
     tip: "Ride over on the water taxi in daylight and time the return crossing for just after sunset — the skyline lights coming on over black water is the money shot of the whole trip.",
+    faqs: [
+      { q: "How do you get to Alki Beach from downtown Seattle?", a: "The King County Water Taxi from Pier 50 to Seacrest dock — about ten minutes, costs a few dollars on an ORCA card, and doubles as the best skyline view in the city." },
+      { q: "Is Alki Beach worth visiting?", a: "Yes — it's Seattle's only real beach scene, with volleyball courts, firepits, a mini Statue of Liberty, and the spot where the Denny Party first landed in 1851." },
+      { q: "What's the best bakery in West Seattle?", a: "Bakery Nouveau in the Junction, up the hill from Alki. Its twice-baked almond croissant has a citywide following — arrive early before it sells out." },
+    ],
   },
   {
     slug: "georgetown",
@@ -225,6 +260,11 @@ const neighborhoods = [
       { name: "Georgetown Art Attack", tag: "Second Saturdays", blurb: "The whole strip opens up — studios, galleries, pop-ups, live music — from early evening. The best single night to see the neighborhood.", address: "Airport Way S corridor", coords: [47.5480, -122.3218] },
     ],
     tip: "Georgetown rewards the unhurried. Pick an afternoon, not an hour — the point is the wander between the murals, not any single stop.",
+    faqs: [
+      { q: "What is Georgetown Art Attack?", a: "A monthly open-studio night on the second Saturday of every month, when galleries and artist studios along Airport Way South all open at once. It's the single best night to see the neighborhood." },
+      { q: "How do I get to Georgetown from downtown Seattle?", a: "Bus 124 from downtown, about 15 minutes. There's no light rail stop directly in the neighborhood yet." },
+      { q: "Is Georgetown safe and worth visiting?", a: "Yes — it's an industrial-turned-arts district with murals, breweries, and antique malls. It's less polished than Seattle's other neighborhoods, which is the point; daytime visits are straightforward." },
+    ],
   },
 ];
 
@@ -351,6 +391,11 @@ const dayTrips = [
       "Clear-day rule: if the Mountain is out in Seattle, it's spectacular up close. If it's socked in, consider Snoqualmie Falls instead — Paradise in a cloud is a very cold gray room.",
       "Take SR-706 through Elbe on the way in — a one-block former logging town with the Mt. Rainier Scenic Railroad's steam engines parked trackside. A five-minute photo stop that costs you nothing.",
     ],
+    faqs: [
+      { q: "How far is Mount Rainier from Seattle?", a: "About 2.5 hours to Paradise via Ashford, one way. It's the longest of the closer day trips, but doable comfortably if you leave by 7 AM." },
+      { q: "Do I need a reservation for Mount Rainier National Park?", a: "In summer, yes — the Paradise corridor requires a timed-entry reservation on recreation.gov in addition to the standard park entrance fee." },
+      { q: "What's the best time of year to see Mount Rainier's wildflowers?", a: "Late July through August, when the Paradise meadows peak. The road itself is open year-round, but snow can linger at Paradise into July." },
+    ],
     map: { center: [46.8523, -121.7603], zoom: 9 },
     markers: [
       { name: "Paradise (Henry M. Jackson Visitor Center)", address: "Paradise Rd E, Mount Rainier NP", coords: [46.7861, -121.7368] },
@@ -388,6 +433,11 @@ const dayTrips = [
       "Garden people: Bloedel Reserve, a 150-acre landscape masterpiece, is 15 minutes north by bus or taxi — book timed entry ahead.",
       "Driving instead of walking on? Poulsbo — the self-styled 'Little Norway,' with a fjord-side main street of bakeries and Nordic gift shops — is 20 minutes north and pairs naturally with a Bainbridge afternoon.",
     ],
+    faqs: [
+      { q: "Do you need a car on Bainbridge Island?", a: "No — Winslow, the main town, is entirely walkable from the ferry terminal. A car only matters if you're heading further out, like to Bloedel Reserve or Poulsbo." },
+      { q: "How much does the Bainbridge Island ferry cost?", a: "About $10 round trip for a walk-on passenger, and fares are only collected westbound — the return crossing is effectively free." },
+      { q: "How long is the ferry ride to Bainbridge Island?", a: "35 minutes from Colman Dock at Pier 52 downtown, with the skyline behind you and the Olympic Mountains ahead — arguably the best part of the trip." },
+    ],
     map: { center: [47.6180, -122.4500], zoom: 12 },
     markers: [
       { name: "Colman Dock (Pier 52)", address: "801 Alaskan Way, Seattle", coords: [47.6023, -122.3389] },
@@ -423,6 +473,11 @@ const dayTrips = [
       "Peak drama is October–May when the river runs high. Late-summer flow is thinner — still lovely, less thunderous.",
       "Rattlesnake Ledge is deservedly popular: arrive before 9 AM on weekends or embrace the conga line.",
     ],
+    faqs: [
+      { q: "Is Snoqualmie Falls free?", a: "Yes — the falls and overlook are free year-round; only the parking lot charges a fee, and it fills by mid-morning on weekends." },
+      { q: "How tall is Snoqualmie Falls?", a: "268 feet — about 100 feet taller than Niagara Falls — dropping into a basalt bowl less than an hour from downtown Seattle." },
+      { q: "Is Snoqualmie Falls the Twin Peaks waterfall?", a: "Yes, and the Salish Lodge perched on its lip served as the exterior of the Great Northern Hotel in the original series." },
+    ],
     map: { center: [47.5100, -121.8100], zoom: 11 },
     markers: [
       { name: "Snoqualmie Falls Overlook", address: "6501 Railroad Ave SE, Snoqualmie", coords: [47.5417, -121.8377] },
@@ -457,6 +512,11 @@ const dayTrips = [
       "Wenatchee is 20 minutes further down US-2 — the 'Apple Capital,' with Ohme Gardens and a Columbia River waterfront path. Bolt it onto the end of a Leavenworth day if you're not ready to turn around.",
       "Winter travel over Stevens Pass can require chains — check WSDOT pass reports before leaving.",
     ],
+    faqs: [
+      { q: "How far is Leavenworth from Seattle?", a: "About 2 to 2.5 hours via US-2 over Stevens Pass — a scenic drive past Index, the Skykomish River, and Deception Falls along the way." },
+      { q: "When are the Leavenworth Christmas lights on?", a: "Nightly from Thanksgiving through February. December weekends are the most crowded; go midweek for the lights with elbow room." },
+      { q: "Is Leavenworth worth visiting in summer?", a: "Yes — floating the Wenatchee River and walking the Icicle Gorge loop are the marquee summer moves, and the village is far less crowded than in December." },
+    ],
     map: { center: [47.6300, -121.1000], zoom: 9 },
     markers: [
       { name: "Front Street (village center)", address: "Front St, Leavenworth", coords: [47.5962, -120.6615] },
@@ -490,6 +550,11 @@ const dayTrips = [
       "Orcas Island option: Moran State Park and the Mount Constitution summit road — the best viewpoint in the entire archipelago.",
       "Whale-watching boats run from Friday Harbor if you want guaranteed proximity; shore viewing at Lime Kiln is free and ethically unbeatable.",
       "Summer vehicle ferries sell out. Reserve the moment plans firm up, or go as a walk-on and rent a bike or moped in Friday Harbor.",
+    ],
+    faqs: [
+      { q: "Can you see orcas on a San Juan Islands day trip?", a: "It's possible but not guaranteed. May through September is the most reliable window, and Lime Kiln Point State Park is the best free shore-based viewing spot in the world for it." },
+      { q: "Is the San Juan Islands trip better as a day trip or overnight?", a: "Honestly, an overnight. It's a 15+ hour round trip done in a single day once you count the drive to Anacortes and the ferry crossing both ways — staying over transforms the experience." },
+      { q: "Do I need a ferry reservation for the San Juan Islands?", a: "Vehicle reservations are close to mandatory in summer — book through WSDOT's Save A Spot system. Walk-on passengers have much more flexibility and can rent a bike or moped on the island instead." },
     ],
     map: { center: [48.5500, -123.0200], zoom: 10 },
     markers: [
@@ -526,6 +591,11 @@ const dayTrips = [
       "For Rialto's Hole-in-the-Wall, consult a tide table and walk out on a falling tide.",
       "The Edmonds–Kingston ferry is often the faster crossing northbound; either boat works.",
       "Want fewer crowds than the marquee three? Staircase, on the park's quiet southeast corner near Lake Cushman, has old-growth riverside trails and a fraction of the traffic.",
+    ],
+    faqs: [
+      { q: "Can you do the Olympic Peninsula as a day trip from Seattle?", a: "Yes, for Hurricane Ridge — about 3 hours door to door via the Bainbridge or Kingston ferry. The Hoh Rainforest and Rialto Beach are farther and better suited to an overnight in Forks or Port Angeles." },
+      { q: "What's the difference between Hurricane Ridge, the Hoh Rainforest, and Rialto Beach?", a: "Hurricane Ridge is alpine meadows and mountain views, the Hoh is temperate rainforest draped in moss, and Rialto is wild Pacific coastline with sea stacks and drift logs. Pick one region per visit — the park is bigger than Rhode Island." },
+      { q: "Do I need a park pass for Olympic National Park?", a: "Yes — $30 per vehicle covers entry to all regions of the park for a week." },
     ],
     map: { center: [47.9000, -123.8000], zoom: 8 },
     markers: [
@@ -569,6 +639,11 @@ const itineraries = [
       "Kerry Park has maybe a dozen parking spots and no lot; arrive 20 minutes before sunset or plan to circle.",
       "The C-ID hop is one Link light rail stop from Westlake or two from Pioneer Square — tap your ORCA card, don't drive.",
     ],
+    faqs: [
+      { q: "What is the best 24-hour itinerary for Seattle?", a: "Start at Pike Place before 9 AM, walk the Overlook Walk to the waterfront, lunch in the C-ID, Chihuly Garden and Glass in the afternoon, Kerry Park at golden hour, then dinner on Capitol Hill." },
+      { q: "Is one day enough to see Seattle?", a: "It's enough for the highlights if you start early — this plan covers the market, the waterfront, two neighborhoods, and the city's best viewpoint without feeling rushed, as long as you're moving by 7:30 AM." },
+      { q: "Should I book Space Needle or Chihuly Garden and Glass tickets in advance?", a: "Book Chihuly online ahead of time — the in-person timed-entry queue can eat 30 minutes you don't have on a tight one-day schedule." },
+    ],
     map: { center: [47.614, -122.338], zoom: 12 },
     markers: [
       { name: "Storyville Coffee", address: "94 Pike St, Suite 34", coords: [47.6089, -122.3401] },
@@ -607,6 +682,11 @@ const itineraries = [
       "Ballard Ave is closed to cars for the Sunday farmers market (year-round, 10 AM–3 PM) — a plus for walking, a headache if you drove.",
       "Book one live-music ticket ahead if there's a touring act; the walk-in door price is a gamble on a Friday.",
     ],
+    faqs: [
+      { q: "What should I do on day two in Seattle?", a: "Head north to Ballard for the Locks and fish ladder, cross to Fremont for the troll and rocket, then take the water taxi to West Seattle for sunset on Alki Beach." },
+      { q: "Does the West Seattle Water Taxi run year-round?", a: "It runs daily roughly April through October and weekdays-only in winter — check King County Metro's schedule before planning the crossing." },
+      { q: "How do you get between Ballard and Fremont without a car?", a: "It's a flat, walkable 25-minute stroll along the Burke-Gilman Trail and the ship canal — no bus or car needed." },
+    ],
     map: { center: [47.645, -122.375], zoom: 12 },
     markers: [
       { name: "Ballard Locks", address: "3015 NW 54th St", coords: [47.665, -122.3966] },
@@ -644,6 +724,11 @@ const itineraries = [
       "SAM is closed Mondays — swap in the Georgetown art walk earlier and push dinner up if your day three lands on one.",
       "Georgetown's biggest night is the second-Saturday Art Attack — check This Weekend before you plan around it, since it's monthly, not weekly.",
       "Whichever farewell dinner you pick, call or book online a day ahead — all three routinely sell out same-day tables.",
+    ],
+    faqs: [
+      { q: "Should I do a day trip or stay in the city on day three?", a: "Either works — Rainier and Bainbridge are the most doable day trips within a single day, while the city-day route (Volunteer Park, bookstores, SAM, Georgetown) suits a slower, unhurried finish." },
+      { q: "Is the Seattle Art Museum open every day?", a: "No — SAM is closed Mondays. If day three lands on a Monday, swap in the Georgetown art walk earlier and adjust dinner timing accordingly." },
+      { q: "What's a good farewell dinner in Seattle?", a: "The Walrus and the Carpenter, Sushi Kashiba, or Il Nido in West Seattle are all worth booking a day ahead — all three routinely sell out same-day tables." },
     ],
     map: { center: [47.598, -122.335], zoom: 12 },
     markers: [

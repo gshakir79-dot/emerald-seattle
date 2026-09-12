@@ -607,6 +607,90 @@ const dayTrips = [
     directions: "Hurricane Ridge Visitor Center, Port Angeles WA",
     ferryLink: true,
   },
+  {
+    slug: "whidbey-island",
+    name: "Whidbey Island",
+    shortName: "Whidbey Island",
+    meta: ["20 MIN FERRY", "FULL DAY"],
+    teaser: "A short ferry hop to a whole island: an arts-town bluff, a historic prairie hike, mussel country, and a bridge over a churning pass.",
+    metaDesc: "Whidbey Island day trip from Seattle: the Mukilteo–Clinton ferry, Langley's First Street, Ebey's Landing, Coupeville mussels, and Deception Pass.",
+    lede: `A twenty-minute ferry hop off I-5 lands you on the longest island in the contiguous 48 — bluff-top arts towns, a National Historical Reserve you can walk across, and a bridge at the far end that photographs like the Pacific Northwest's opening credits.`,
+    stats: [
+      ["FERRY", "Mukilteo–Clinton, ~20 min, roughly hourly"],
+      ["WHALE SEASON", "Gray whales in Saratoga Passage, Mar–Apr"],
+      ["LOOP OPTION", "Return via Deception Pass Bridge — no ferry needed"],
+      ["FOOD", "Penn Cove mussels, farmed right offshore"],
+    ],
+    plan: [
+      { time: "7:30", title: "Drive to Mukilteo", text: "About 30–40 minutes from Seattle. The ferry runs frequently and reservations aren't typical for this short crossing, though summer weekend lines can back up." },
+      { time: "8:45", title: "Langley", text: "A bluff-top arts town twenty minutes south of the ferry landing: First Street's galleries and bookshops, and a whale-watching park on the bluff itself — resident gray whales, nicknamed the 'Sounders,' feed in Saratoga Passage most springs." },
+      { time: "11:00", title: "Ebey's Landing & Fort Casey", text: "A National Historical Reserve of working farmland and bluff trail, plus a decommissioned coastal-defense fort with gun emplacements and the Admiralty Head Lighthouse." },
+      { time: "13:00", title: "Coupeville", text: "A 19th-century waterfront town on Penn Cove, where the mussels on your plate were likely farmed within sight of the dock." },
+      { time: "15:30", title: "Deception Pass", text: "The island's north tip: a steel bridge arcing 180 feet over a tidal channel that runs like a river. Park at either end and walk out onto it." },
+    ],
+    needToKnow: [
+      "Loop it: cross by ferry southbound into Clinton, then leave via Deception Pass Bridge and I-5 north — no return ferry, no backtracking.",
+      "The Mukilteo–Clinton run rarely takes reservations; it's a first-come line, longest on summer weekend afternoons.",
+      "Whale season is a probability, not a promise — Saratoga Passage's resident gray whales are most reliable March through April.",
+      "Fort Casey's lighthouse and gun batteries are free to explore and an easy stop even if history isn't usually your thing.",
+    ],
+    faqs: [
+      { q: "How do you get to Whidbey Island from Seattle?", a: "The fastest way is the Mukilteo–Clinton ferry, a 20-minute crossing after a 30–40 minute drive north. You can also drive the whole way around via the Deception Pass Bridge at the island's north end, with no ferry required." },
+      { q: "Do you need a ferry reservation for Whidbey Island?", a: "Not typically — the Mukilteo–Clinton run is a short, frequent crossing that runs first-come, first-served. Summer weekend afternoons can still mean a real wait." },
+      { q: "Can you see whales from Whidbey Island?", a: "Yes, with some luck — resident gray whales feed in Saratoga Passage off Langley most reliably from March through April, visible from bluff-top viewpoints." },
+    ],
+    map: { center: [48.15, -122.55], zoom: 10 },
+    markers: [
+      { name: "Mukilteo Ferry Terminal", address: "Mukilteo, WA", coords: [47.9476, -122.3049] },
+      { name: "Langley (First Street)", address: "First St, Langley", coords: [48.0365, -122.4046] },
+      { name: "Fort Casey State Park", address: "1280 S Fort Casey Rd, Coupeville", coords: [48.159, -122.6768] },
+      { name: "Deception Pass Bridge", address: "Deception Pass State Park", coords: [48.402, -122.6459] },
+    ],
+    directions: "Mukilteo Ferry Terminal, Mukilteo WA",
+    ferryLink: true,
+  },
+  {
+    slug: "la-conner",
+    name: "La Conner & the Skagit Valley",
+    shortName: "La Conner",
+    meta: ["1.5 HR DRIVE", "HALF TO FULL DAY"],
+    teaser: "A waterfront village on a tidal channel, ringed by farmland that turns into a tulip-striped quilt every April. A scenic-drive detour makes it a full day.",
+    metaDesc: "La Conner day trip from Seattle: the Skagit Valley Tulip Festival, First Street shops, and pairing it with the Chuckanut Drive scenic route.",
+    lede: `An hour and a half north, a 19th-century waterfront village sits on the Swinomish Channel surrounded by some of the flattest, most fertile farmland in the state — which for a few weeks each April erupts into stripes of tulips running to the horizon.`,
+    stats: [
+      ["DRIVE", "~1.5 hrs north via I-5"],
+      ["TULIP SEASON", "Peak bloom typically early–mid April"],
+      ["OFF-SEASON", "Shops, galleries, and the channel walk year-round"],
+      ["SCENIC RETURN", "Chuckanut Drive along Samish Bay"],
+    ],
+    plan: [
+      { time: "9:00", title: "Drive north on I-5", text: "About 90 minutes to La Conner, with a short detour off the freeway through farmland." },
+      { time: "10:30", title: "First Street & Pioneer Park", text: "Waterfront shops and galleries along the Swinomish Channel, with Pioneer Park's view of the Rainbow Bridge as the town's postcard shot." },
+      { time: "11:30", title: "The tulip fields", text: "In April, Roozengaarde and Tulip Town are a ten-minute drive out of town — rows of color running to the Cascade foothills. Check each farm's bloom map before you go; timing shifts with the weather." },
+      { time: "13:00", title: "Lunch on the channel", text: "Waterfront tables looking out at fishing boats and the bridge." },
+      { time: "14:30", title: "Detour to Bow-Edison", text: "A blink of a food village on the way back: Breadfarm's bakery case, Taylor Shellfish's farm stand, and Slough Food's deli counter." },
+      { time: "16:00", title: "Chuckanut Drive south", text: "Trade the freeway for the scenic route: a cliffside road above Samish Bay with pull-offs at Larrabee State Park before rejoining I-5." },
+    ],
+    needToKnow: [
+      "Tulip season is genuinely peak: book ahead, expect traffic on weekends, and check the festival's bloom estimate before committing to a date — a late cold snap can push it back a week or two.",
+      "La Conner outside tulip season is still a pleasant half-day: the channel walk, galleries, and shops don't need flowers to justify the drive.",
+      "Chuckanut Drive is slower than I-5 but the better story — build in the extra 20–30 minutes on the way home rather than the way up.",
+      "Bow-Edison is easy to miss: it's a few blocks of Chuckanut Drive proper, not a marked town center.",
+    ],
+    faqs: [
+      { q: "When is the best time to visit La Conner for tulips?", a: "Peak bloom is typically early-to-mid April during the Skagit Valley Tulip Festival, though exact timing shifts year to year with the weather — check the festival's bloom map before driving up." },
+      { q: "How far is La Conner from Seattle?", a: "About 1.5 hours north via I-5, with the town itself a short detour off the freeway on the Swinomish Channel." },
+      { q: "Is La Conner worth visiting outside tulip season?", a: "Yes — the waterfront shops, galleries, and Pioneer Park's view of the Rainbow Bridge make it a pleasant stop year-round, just without the flower fields." },
+    ],
+    map: { center: [48.42, -122.48], zoom: 11 },
+    markers: [
+      { name: "La Conner (First Street)", address: "First St, La Conner", coords: [48.3928, -122.4993] },
+      { name: "Pioneer Park", address: "Caledonia St, La Conner", coords: [48.3902, -122.5008] },
+      { name: "RoozenGaarde Tulip Fields", address: "15867 Beaver Marsh Rd, Mount Vernon", coords: [48.4652, -122.4342] },
+      { name: "Breadfarm (Bow-Edison)", address: "5766 Cains Ct, Bow", coords: [48.5391, -122.4569] },
+    ],
+    directions: "La Conner, WA",
+  },
 ];
 
 const itineraries = [
@@ -776,6 +860,8 @@ const tripArt = {
   "leavenworth": `<svg class="trip-art" viewBox="0 0 300 160"><rect width="300" height="160" fill="#16273d"/><path d="M0 120 Q40 90 80 115 Q90 100 110 112 L110 160 L0 160 Z" fill="#0f1c2e"/><path d="M300 120 Q260 88 215 116 L215 160 L300 160 Z" fill="#0f1c2e"/><path d="M110 160 L110 90 L125 74 L140 90 L140 160 M150 160 L150 82 L168 62 L186 82 L186 160 M196 160 L196 92 L208 80 L220 92 L220 160" fill="#24384f"/><path d="M118 92 h14 M158 84 h20 M200 96 h12" stroke="#ffd9a0" stroke-width="4"/><circle cx="52" cy="40" r="13" fill="#e9c4ad" opacity="0.8"/></svg>`,
   "san-juan-islands": `<svg class="trip-art" viewBox="0 0 300 160"><rect width="300" height="160" fill="#16273d"/><path d="M0 110 Q75 95 150 110 T300 110 L300 160 L0 160 Z" fill="#1d3049"/><path d="M40 110 Q70 84 105 102 Z M170 108 Q205 78 250 100 Z" fill="#12233a"/><path d="M140 96 q10 -14 22 0 q-4 -22 8 -30" stroke="#8fb8a8" stroke-width="5" fill="none"/><circle cx="240" cy="36" r="14" fill="#e9c4ad" opacity="0.85"/><path d="M60 120 q12 8 24 0 M180 126 q12 8 24 0" stroke="#3d5a7a" stroke-width="3" fill="none"/></svg>`,
   "olympic-peninsula": `<svg class="trip-art" viewBox="0 0 300 160"><rect width="300" height="160" fill="#16273d"/><path d="M0 160 L70 60 L100 90 L140 50 L180 95 L230 45 L300 160 Z" fill="#31435e"/><path d="M140 50 L158 72 L128 68 Z M230 45 L250 72 L214 66 Z" fill="#efe4da"/><path d="M20 160 l14 -30 4 0 14 30 M60 160 l16 -36 4 0 16 36 M250 160 l14 -28 4 0 14 28" fill="#0f2438"/><path d="M0 150 Q150 138 300 150 L300 160 L0 160 Z" fill="#0d1a2b"/></svg>`,
+  "whidbey-island": `<svg class="trip-art" viewBox="0 0 300 160"><rect width="300" height="160" fill="#16273d"/><path d="M0 110 Q75 95 150 110 T300 110 L300 160 L0 160 Z" fill="#1d3049"/><path d="M40 92 L40 60 L120 60 L120 92 Z" fill="#24384f"/><path d="M40 60 L80 30 L120 60 Z" fill="#2e435c"/><circle cx="240" cy="34" r="14" fill="#e9c4ad" opacity="0.85"/><path d="M170 100 l40 0 l-6 -14 l-28 0 Z" fill="#e8e4da"/><rect x="182" y="86" width="4" height="14" fill="#3d5a7a"/></svg>`,
+  "la-conner": `<svg class="trip-art" viewBox="0 0 300 160"><rect width="300" height="160" fill="#16273d"/><path d="M0 120 Q150 105 300 120 L300 160 L0 160 Z" fill="#1d3049"/><path d="M0 60 h300 v10 h-300z" fill="#d94f6b" opacity="0.7"/><path d="M0 74 h300 v10 h-300z" fill="#f2b134" opacity="0.7"/><path d="M0 88 h300 v10 h-300z" fill="#e85d75" opacity="0.6"/><path d="M60 120 L60 96 L100 96 L100 120 Z" fill="#24384f"/><path d="M60 96 L80 78 L100 96 Z" fill="#2e435c"/></svg>`,
 };
 
 module.exports = { neighborhoods, eatCategories, dayTrips, itineraries, tripArt, weekend };

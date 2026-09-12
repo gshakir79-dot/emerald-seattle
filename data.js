@@ -691,6 +691,46 @@ const dayTrips = [
     ],
     directions: "La Conner, WA",
   },
+  {
+    slug: "seabrook",
+    name: "Seabrook",
+    shortName: "Seabrook",
+    meta: ["3.5–4 HR DRIVE", "OVERNIGHT RECOMMENDED"],
+    teaser: "A beach town built from scratch — candy-colored cottages, a car-free town square, and miles of wide gray-sand coastline. The furthest trip on this list, and the one to sleep over for.",
+    metaDesc: "Seabrook WA day trip from Seattle: driving directions, the car-free cottage town center, Pacific Beach, and why it's better as an overnight than a day trip.",
+    lede: `Nothing about Seabrook existed before 2004 — it's a planned New Urbanist beach town built deliberately walkable, with a car-free square, pastel cottages on rocking-chair porches, and the entire wide, flat Washington coast at the end of every street.`,
+    stats: [
+      ["DRIVE", "~3.5–4 hrs via Olympia and Aberdeen"],
+      ["TOWN", "Car-free core — park at the edges, walk in"],
+      ["BEACH", "Wide, flat, dog-friendly gray sand"],
+      ["BEST AS", "Overnight in a cottage rather than a single day"],
+    ],
+    plan: [
+      { time: "7:00", title: "Leave early", text: "The drive runs I-5 to Olympia, then US-12/SR-8 to Aberdeen, then north on SR-109 through Hoquiam to the coast. Gas and food are sparser the closer you get — top off in Aberdeen." },
+      { time: "11:00", title: "The town square", text: "Seabrook's entire commercial core is car-free: a green ringed by shops, a bakery, and the deliberately absurd 'Curse of Pirate Death' mini golf course." },
+      { time: "12:30", title: "The beach", text: "Flat, wide, and dog-friendly, running for miles in both directions. Kites, driftwood forts, and low-tide agate hunting are the entire activity list, and that's the point." },
+      { time: "14:30", title: "Lunch in town", text: "A handful of small restaurants and a market cover the basics — nothing fancy, everything walkable from wherever you're staying." },
+      { time: "16:00", title: "Griffiths-Priday State Park", text: "A short walk north of town where the Copalis River meets the ocean — dunes, driftwood, and far fewer people than the main beach." },
+    ],
+    needToKnow: [
+      "Do the math before committing to a single day: it's roughly 7–8 hours of driving round trip. An overnight in one of Seabrook's rental cottages changes the trip entirely.",
+      "The town center is genuinely car-free — expect to park at a peripheral lot and walk in with your bags.",
+      "Summer weekends book cottages out well in advance; this isn't a spontaneous overnight in July.",
+      "Amenities thin out fast past Aberdeen — fill the tank and grab any supplies you need before the last stretch on SR-109.",
+    ],
+    faqs: [
+      { q: "How far is Seabrook, WA from Seattle?", a: "About 3.5 to 4 hours by car, driving through Olympia and Aberdeen before heading north on SR-109 to the coast — the longest drive of any trip on this list." },
+      { q: "Is Seabrook a real town or was it built recently?", a: "It's a planned community built starting in 2004 in a deliberately walkable, New Urbanist style, with a car-free town square and cottage rentals rather than a historic town center." },
+      { q: "Is Seabrook better as a day trip or an overnight?", a: "Overnight, honestly. At 7–8 hours of round-trip driving, a single day leaves very little time on the beach — renting one of the town's cottages for a night changes the math completely." },
+    ],
+    map: { center: [47.205, -124.19], zoom: 12 },
+    markers: [
+      { name: "Seabrook Town Square", address: "5 Front St, Pacific Beach", coords: [47.2039, -124.1892] },
+      { name: "Seabrook Beach Access", address: "Seabrook, WA", coords: [47.2018, -124.1955] },
+      { name: "Griffiths-Priday State Park", address: "Copalis Beach, WA", coords: [47.2236, -124.2017] },
+    ],
+    directions: "Seabrook, WA",
+  },
 ];
 
 const itineraries = [
@@ -862,6 +902,7 @@ const tripArt = {
   "olympic-peninsula": `<svg class="trip-art" viewBox="0 0 300 160"><rect width="300" height="160" fill="#16273d"/><path d="M0 160 L70 60 L100 90 L140 50 L180 95 L230 45 L300 160 Z" fill="#31435e"/><path d="M140 50 L158 72 L128 68 Z M230 45 L250 72 L214 66 Z" fill="#efe4da"/><path d="M20 160 l14 -30 4 0 14 30 M60 160 l16 -36 4 0 16 36 M250 160 l14 -28 4 0 14 28" fill="#0f2438"/><path d="M0 150 Q150 138 300 150 L300 160 L0 160 Z" fill="#0d1a2b"/></svg>`,
   "whidbey-island": `<svg class="trip-art" viewBox="0 0 300 160"><rect width="300" height="160" fill="#16273d"/><path d="M0 110 Q75 95 150 110 T300 110 L300 160 L0 160 Z" fill="#1d3049"/><path d="M40 92 L40 60 L120 60 L120 92 Z" fill="#24384f"/><path d="M40 60 L80 30 L120 60 Z" fill="#2e435c"/><circle cx="240" cy="34" r="14" fill="#e9c4ad" opacity="0.85"/><path d="M170 100 l40 0 l-6 -14 l-28 0 Z" fill="#e8e4da"/><rect x="182" y="86" width="4" height="14" fill="#3d5a7a"/></svg>`,
   "la-conner": `<svg class="trip-art" viewBox="0 0 300 160"><rect width="300" height="160" fill="#16273d"/><path d="M0 120 Q150 105 300 120 L300 160 L0 160 Z" fill="#1d3049"/><path d="M0 60 h300 v10 h-300z" fill="#d94f6b" opacity="0.7"/><path d="M0 74 h300 v10 h-300z" fill="#f2b134" opacity="0.7"/><path d="M0 88 h300 v10 h-300z" fill="#e85d75" opacity="0.6"/><path d="M60 120 L60 96 L100 96 L100 120 Z" fill="#24384f"/><path d="M60 96 L80 78 L100 96 Z" fill="#2e435c"/></svg>`,
+  "seabrook": `<svg class="trip-art" viewBox="0 0 300 160"><rect width="300" height="160" fill="#16273d"/><path d="M0 130 Q150 118 300 130 L300 160 L0 160 Z" fill="#1d3049"/><path d="M20 110 L20 90 L50 90 L50 110 Z M60 110 L60 85 L95 85 L95 110 Z M105 110 L105 92 L135 92 L135 110 Z M180 110 L180 88 L212 88 L212 110 Z M220 110 L220 94 L248 94 L248 110 Z" fill="#3d5a7a"/><path d="M20 90 L35 74 L50 90 Z M60 85 L77 66 L95 85 Z M105 92 L120 78 L135 92 Z M180 88 L196 72 L212 88 Z M220 94 L234 80 L248 94 Z" fill="#e8c9a0"/><path d="M0 138 q40 -8 80 0 t80 0 t80 0 t60 0" stroke="#3d5a7a" stroke-width="3" fill="none" opacity="0.6"/><path d="M0 148 q40 -6 80 0 t80 0 t80 0 t60 0" stroke="#3d5a7a" stroke-width="2" fill="none" opacity="0.4"/></svg>`,
 };
 
 module.exports = { neighborhoods, eatCategories, dayTrips, itineraries, tripArt, weekend };

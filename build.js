@@ -413,14 +413,14 @@ function tripsIndex() {
       ${crumbsHtml(crumbs)}
       <p class="kicker reveal">04 — Beyond the City</p>
       <h1 class="page-title reveal">Day trips worth <em>the drive</em></h1>
-      <p class="lede reveal">Eight escapes, each with an hour-by-hour plan, a map, and the honest logistics nobody prints on the brochure.</p>
+      <p class="lede reveal">Nine escapes, each with an hour-by-hour plan, a map, and the honest logistics nobody prints on the brochure.</p>
     </div>
   </section>
   <section class="wrap"><div class="trips-grid">${cards}</div></section>
 </main>`;
   return shell({
     title: "Day Trips from Seattle", urlPath: "/day-trips/",
-    desc: "Eight day trips from Seattle worth the drive: Mount Rainier, Bainbridge Island, Snoqualmie Falls, Leavenworth, the San Juan Islands, the Olympic Peninsula, Whidbey Island, and La Conner.",
+    desc: "Nine day trips from Seattle worth the drive: Mount Rainier, Bainbridge Island, Snoqualmie Falls, Leavenworth, the San Juan Islands, the Olympic Peninsula, Whidbey Island, La Conner, and Seabrook.",
     body, hasMap: false, crumbs,
   });
 }
